@@ -1,0 +1,13 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Frontend Developer Intern",
+      "company": "Tech Corp",
+      "location": "Remote",
+      "type": "Internship",
+      "salary": "₹15,000/month"
+    }
+  ],
+  "applications": []
+}
