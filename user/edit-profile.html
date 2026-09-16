@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Edit Profile</h1>
+            <a href="profile.html" class="btn">Back to Profile</a>
+        </div>
+
+        <div class="profile-card">
+
+            <form id="profileForm">
+
+                <label>Full Name</label>
+                <input type="text" id="editName" value="Mohit Chauhan">
+
+                <label>Email</label>
+                <input type="email" id="editEmail" value="mohit@example.com">
+
+                <label>Phone</label>
+                <input type="text" id="editPhone" value="+91 9876543210">
+
+                <label>Date of Birth</label>
+                <input type="date" id="editDob">
+
+                <label>Location</label>
+                <input type="text" id="editLocation" value="India">
+
+                <label>Gender</label>
+                <select id="editGender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <label>Education</label>
+                <input type="text" id="editEducation" value="B.Tech - Computer Science">
+
+                <label>Skills</label>
+                <input type="text" id="editSkills"
+                       value="Java, Python, HTML, CSS, JavaScript, Cloud Computing">
+
+                <label>Resume</label>
+                <input type="file" id="editResume">
+
+                <button type="submit" class="save-btn">
+                    Save Profile
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="user.js"></script>
+</body>
+</html>
