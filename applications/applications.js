@@ -9,6 +9,7 @@ if (withdrawButton) {
         }
     });
 }
+
 // const applicationForm = document.getElementById("applicationForm");
 
 // if (applicationForm) {
