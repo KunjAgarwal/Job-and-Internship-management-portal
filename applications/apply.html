@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now</title>
+    <link rel="stylesheet" href="../css/applications.css">
+</head>
+<body>
+
+    <header>
+        <h2>Job & Internship Portal</h2>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="applications.html">My Applications</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-card">
+            <h1>Apply Now</h1>
+
+            <form id="applicationForm">
+
+                <label>Job / Internship Title</label>
+                <input type="text" id="jobTitle" required>
+
+                <label>Company</label>
+                <input type="text" id="company" required>
+
+                <label>Your Name</label>
+                <input type="text" id="name" required>
+
+                <label>Email</label>
+                <input type="email" id="email" required>
+
+                <label>Phone</label>
+                <input type="tel" id="phone" required>
+
+                <label>Resume Link</label>
+                <input type="url" id="resume" placeholder="https://..." required>
+
+                <label>Cover Message</label>
+                <textarea id="message" rows="5"></textarea>
+
+                <button type="submit">Apply Now</button>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="applications.js"></script>
+
+</body>
+</html>
