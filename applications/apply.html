@@ -3,50 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply Now</title>
+    <title>Apply Now | CareerConnect</title>
     <link rel="stylesheet" href="../css/applications.css">
 </head>
+
 <body>
 
     <header>
-        <h2>Job & Internship Portal</h2>
+        <h2>CareerConnect</h2>
+
         <nav>
             <a href="../index.html">Home</a>
-            <a href="applications.html">My Applications</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="../jobs/internships.html">Internships</a>
+            <a href="../user/profile.html">Profile</a>
+            <a href="applications.html">Applications</a>
         </nav>
     </header>
 
     <main>
+
         <div class="form-card">
+
+            <p class="small-heading">APPLICATION</p>
+
             <h1>Apply Now</h1>
 
             <form id="applicationForm">
 
-                <label>Job / Internship Title</label>
-                <input type="text" id="jobTitle" required>
+                <label for="jobTitle">
+                    Job / Internship Title
+                </label>
 
-                <label>Company</label>
-                <input type="text" id="company" required>
+                <input
+                    type="text"
+                    id="jobTitle"
+                    placeholder="Enter job or internship title"
+                    required
+                >
 
-                <label>Your Name</label>
-                <input type="text" id="name" required>
 
-                <label>Email</label>
-                <input type="email" id="email" required>
+                <label for="company">
+                    Company
+                </label>
 
-                <label>Phone</label>
-                <input type="tel" id="phone" required>
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Enter company name"
+                    required
+                >
 
-                <label>Resume Link</label>
-                <input type="url" id="resume" placeholder="https://..." required>
 
-                <label>Cover Message</label>
-                <textarea id="message" rows="5"></textarea>
+                <label for="name">
+                    Your Name
+                </label>
 
-                <button type="submit">Apply Now</button>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="phone">
+                    Phone
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <label for="resume">
+                    Resume Link
+                </label>
+
+                <input
+                    type="url"
+                    id="resume"
+                    placeholder="https://example.com/resume"
+                    required
+                >
+
+
+                <label for="message">
+                    Cover Message
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Write a short message about why you are suitable for this opportunity..."
+                ></textarea>
+
+
+                <button type="submit">
+                    Submit Application
+                </button>
 
             </form>
+
         </div>
+
     </main>
 
     <script src="applications.js"></script>
