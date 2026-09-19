@@ -9,7 +9,6 @@
 
 <body>
 
-    
     <header>
         <h2>CareerConnect</h2>
 
@@ -22,108 +21,176 @@
         </nav>
     </header>
 
+
     <main>
 
-        <div class="form-card">
-
-            <p class="small-heading">APPLICATION</p>
-
-            <h1>Apply Now</h1>
-
-            <form id="applicationForm">
-
-                <label for="jobTitle">
-                    Job / Internship Title
-                </label>
-
-                <input
-                    type="text"
-                    id="jobTitle"
-                    placeholder="Enter job or internship title"
-                    required
-                >
+        <section class="apply-header">
+            <div>
+                <p class="small-heading">APPLICATION</p>
+                <h1>Apply for an Opportunity</h1>
+                <p>
+                    Complete the form below to submit your application.
+                    Make sure your information is correct before submitting.
+                </p>
+            </div>
+        </section>
 
 
-                <label for="company">
-                    Company
-                </label>
+        <section class="apply-layout">
 
-                <input
-                    type="text"
-                    id="company"
-                    placeholder="Enter company name"
-                    required
-                >
+            <div class="opportunity-card">
 
+                <p class="small-heading">OPPORTUNITY</p>
 
-                <label for="name">
-                    Your Name
-                </label>
+                <div class="company-logo large-logo">
+                    AT
+                </div>
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your full name"
-                    required
-                >
+                <h2 id="jobTitleDisplay">
+                    Software Developer
+                </h2>
 
+                <p class="company-name">
+                    ABC Technologies
+                </p>
 
-                <label for="email">
-                    Email
-                </label>
+                <div class="opportunity-details">
+                    <div>
+                        <span>Type</span>
+                        <strong>Full Time Job</strong>
+                    </div>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    required
-                >
+                    <div>
+                        <span>Location</span>
+                        <strong>Delhi</strong>
+                    </div>
 
+                    <div>
+                        <span>Experience</span>
+                        <strong>Fresher</strong>
+                    </div>
+                </div>
 
-                <label for="phone">
-                    Phone
-                </label>
+                <div class="opportunity-note">
+                    <strong>Before you apply</strong>
+                    <p>
+                        Make sure your contact details and resume are
+                        up to date. Your application will be shared
+                        with the employer.
+                    </p>
+                </div>
 
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter your phone number"
-                    required
-                >
-
-
-                <label for="resume">
-                    Resume Link
-                </label>
-
-                <input
-                    type="url"
-                    id="resume"
-                    placeholder="https://example.com/resume"
-                    required
-                >
+            </div>
 
 
-                <label for="message">
-                    Cover Message
-                </label>
+            <div class="form-card">
 
-                <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Write a short message about why you are suitable for this opportunity..."
-                ></textarea>
+                <p class="small-heading">YOUR DETAILS</p>
+
+                <h2>Application Form</h2>
+
+                <p class="form-description">
+                    Enter your details carefully.
+                </p>
+
+                <form id="applicationForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+                        </div>
+
+                    </div>
 
 
-                <button type="submit">
-                    Submit Application
-                </button>
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address
+                        </label>
 
-            </form>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
 
-        </div>
+
+                    <div class="form-group">
+                        <label for="resume">
+                            Resume Link
+                        </label>
+
+                        <input
+                            type="url"
+                            id="resume"
+                            placeholder="https://example.com/resume"
+                            required
+                        >
+
+                        <span class="input-help">
+                            Add a publicly accessible link to your resume.
+                        </span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="message">
+                            Cover Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="6"
+                            placeholder="Tell the employer briefly why you are interested in this opportunity..."
+                        ></textarea>
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <a href="applications.html" class="cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit">
+                            Submit Application
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
 
     </main>
+
 
     <script src="applications.js"></script>
 
