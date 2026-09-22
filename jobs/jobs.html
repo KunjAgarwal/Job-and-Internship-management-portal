@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jobs | CareerConnect</title>
+
+    <link rel="stylesheet" href="../css/jobs.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+
+            <a href="../index.html" class="logo">
+                CareerConnect
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="jobs.html" class="active">Jobs</a>
+                <a href="internships.html">Internships</a>
+                <a href="../login.html">Login</a>
+                <a href="../signup.html" class="signup-btn">Sign Up</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="page-container">
+
+        <section class="page-hero">
+
+            <p class="eyebrow">EXPLORE OPPORTUNITIES</p>
+
+            <h1>
+                Find the right job.<br>
+                Start your career.
+            </h1>
+
+            <p class="hero-text">
+                Explore job opportunities from different companies
+                and take the next step towards your career.
+            </p>
+
+        </section>
+
+
+        <section class="search-section">
+
+            <h2>Find your next opportunity</h2>
+
+            <div class="filter-container">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search jobs..."
+                >
+
+                <select id="locationFilter">
+                    <option value="">All Locations</option>
+                </select>
+
+                <select id="salaryFilter">
+                    <option value="">All Salaries</option>
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <section class="listing-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">AVAILABLE OPPORTUNITIES</p>
+                    <h2>Job Listings</h2>
+                </div>
+            </div>
+
+            <div id="jobsContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="jobs.js"></script>
+
+</body>
+</html>
