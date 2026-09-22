@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internships | CareerConnect</title>
+
+    <link rel="stylesheet" href="../css/jobs.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="navbar-container">
+
+            <a href="../index.html" class="logo">
+                CareerConnect
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="internships.html" class="active">Internships</a>
+                <a href="../login.html">Login</a>
+                <a href="../signup.html" class="signup-btn">Sign Up</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="page-container">
+
+        <section class="page-hero">
+
+            <p class="eyebrow">BUILD YOUR CAREER</p>
+
+            <h1>
+                Find the right internship.<br>
+                Start learning. Start growing.
+            </h1>
+
+            <p class="hero-text">
+                Explore internship opportunities from different companies
+                and take the next step towards your career.
+            </p>
+
+        </section>
+
+
+        <section class="search-section" id="internshipListingSection">
+
+            <h2>Find your next internship</h2>
+
+            <div class="filter-container">
+
+                <input
+                    type="text"
+                    id="internshipSearchInput"
+                    placeholder="Search internships..."
+                >
+
+                <select id="internshipLocationFilter">
+                    <option value="">All Locations</option>
+                </select>
+
+                <select id="internshipSalaryFilter">
+                    <option value="">All Stipends</option>
+                </select>
+
+            </div>
+
+
+            <div class="listing-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">AVAILABLE OPPORTUNITIES</p>
+                        <h2>Internship Listings</h2>
+                    </div>
+                </div>
+
+                <div id="internshipsContainer"></div>
+
+            </div>
+
+        </section>
+
+
+        <section id="internshipDetails"></section>
+
+    </main>
+
+
+    <script src="jobs.js"></script>
+
+</body>
+</html>
