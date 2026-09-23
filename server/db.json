@@ -1,0 +1,78 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "TechNova",
+      "location": "Noida",
+      "salary": "6-8 LPA",
+      "type": "Full Time",
+      "description": "We are looking for a frontend developer to build responsive and user-friendly web applications."
+    },
+    {
+      "id": 2,
+      "title": "Backend Developer",
+      "company": "CodeCraft",
+      "location": "Bangalore",
+      "salary": "8-12 LPA",
+      "type": "Full Time",
+      "description": "We are looking for a backend developer to design and develop reliable server-side applications."
+    },
+    {
+      "id": 3,
+      "title": "Software Engineer",
+      "company": "InnoTech",
+      "location": "Delhi",
+      "salary": "10-14 LPA",
+      "type": "Full Time",
+      "description": "Join our engineering team to develop scalable software solutions and work on real-world products."
+    },
+    {
+      "id": 4,
+      "title": "UI Developer",
+      "company": "PixelWorks",
+      "location": "Pune",
+      "salary": "5-7 LPA",
+      "type": "Full Time",
+      "description": "We are looking for a UI developer who can create clean and responsive user interfaces."
+    }
+  ],
+  "internships": [
+    {
+      "id": 1,
+      "title": "Web Development Intern",
+      "company": "TechNova",
+      "location": "Noida",
+      "salary": "15000/month",
+      "type": "Internship",
+      "description": "Work with the development team to build and improve web applications using modern web technologies."
+    },
+    {
+      "id": 2,
+      "title": "Backend Development Intern",
+      "company": "CodeCraft",
+      "location": "Bangalore",
+      "salary": "20000/month",
+      "type": "Internship",
+      "description": "Assist the backend team in developing APIs and working with server-side application logic."
+    },
+    {
+      "id": 3,
+      "title": "Software Development Intern",
+      "company": "InnoTech",
+      "location": "Delhi",
+      "salary": "18000/month",
+      "type": "Internship",
+      "description": "Work on software development tasks and gain practical experience in application development."
+    },
+    {
+      "id": 4,
+      "title": "UI Design Intern",
+      "company": "PixelWorks",
+      "location": "Pune",
+      "salary": "12000/month",
+      "type": "Internship",
+      "description": "Assist the design team in creating clean and responsive interfaces for web applications."
+    }
+  ]
+}
