@@ -28,9 +28,9 @@ body {
 }
 
 
-/* =========================
+/* 
    SIGNUP CARD
-========================= */
+ */
 
 .signup-container {
 
@@ -59,9 +59,9 @@ body {
 }
 
 
-/* =========================
+/* 
    HEADING
-========================= */
+*/
 
 h1 {
 
@@ -81,52 +81,10 @@ h1 {
 }
 
 
-/* =========================
-   PROGRESS BAR
-========================= */
 
-.progress {
-
-    height: 6px;
-
-    background: #e7ebf2;
-
-    border-radius: 20px;
-
-    margin-bottom: 30px;
-
-    overflow: hidden;
-}
-
-
-.progress span {
-
-    display: block;
-
-    width: 25%;
-
-    height: 100%;
-
-    background: #2864dc;
-
-    border-radius: 20px;
-
-    transition: 0.5s ease;
-}
-
-
-/* Progress changes when user interacts */
-
-.signup-container:focus-within
-.progress span {
-
-    width: 50%;
-}
-
-
-/* =========================
+/* 
    FORM
-========================= */
+ */
 
 .form-group {
 
@@ -146,9 +104,9 @@ label {
 }
 
 
-/* =========================
+/* 
    INPUTS
-========================= */
+ */
 
 input[type="text"],
 input[type="email"],
@@ -192,7 +150,7 @@ input:focus {
 }
 
 
-/* Valid */
+/* VALID */
 
 input:valid {
 
@@ -211,9 +169,9 @@ input:focus:invalid {
 }
 
 
-/* =========================
+/* 
    EMAIL
-========================= */
+ */
 
 .email-box {
 
@@ -243,9 +201,9 @@ input:focus:invalid {
 }
 
 
-/* =========================
+/* 
    PASSWORD
-========================= */
+*/
 
 .password-box {
 
@@ -265,18 +223,6 @@ input:focus:invalid {
 }
 
 
-/* .password-strength span {
-
-    height: 4px;
-
-    flex: 1;
-
-    background: #e4e8ef;
-
-    border-radius: 10px;
-
-    transition: 0.3s ease;
-} */
 
 
 /* CSS-only interaction */
@@ -301,9 +247,9 @@ span:nth-child(2) {
 }
 
 
-/* =========================
+/*
    ROLE CARDS
-========================= */
+*/
 
 .role-heading {
 
@@ -429,9 +375,9 @@ span:nth-child(2) {
 }
 
 
-/* =========================
+/* 
    BUTTON
-========================= */
+*/
 
 .create-btn {
 
@@ -481,9 +427,9 @@ span:nth-child(2) {
 }
 
 
-/* =========================
+/* 
    LOGIN
-========================= */
+ */
 
 .login {
 
@@ -513,9 +459,9 @@ span:nth-child(2) {
 }
 
 
-/* =========================
+/* 
    RESPONSIVE
-========================= */
+ */
 
 @media (max-width: 650px) {
 
@@ -544,9 +490,9 @@ span:nth-child(2) {
 
 }
 
-/* =================================
+/* 
    LOGIN PAGE
-================================= */
+ */
 
 .login-container {
 
@@ -578,9 +524,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/*
    LOGO
-================================= */
+ */
 
 .login-logo {
 
@@ -594,9 +540,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/* 
    LOGIN HEADING
-================================= */
+ */
 
 .login-header {
 
@@ -622,9 +568,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/* 
    PASSWORD
-================================= */
+ */
 
 .login-password-box {
 
@@ -656,9 +602,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/* 
    LOGIN OPTIONS
-================================= */
+ */
 
 .login-options {
 
@@ -728,9 +674,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/* 
    LOGIN BUTTON
-================================= */
+*/
 
 .login-btn {
 
@@ -738,9 +684,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/* 
    DIVIDER
-================================= */
+ */
 
 .divider {
 
@@ -777,9 +723,9 @@ span:nth-child(2) {
 }
 
 
-/* =================================
+/* 
    MOBILE
-================================= */
+*/
 
 @media (max-width: 650px) {
 
