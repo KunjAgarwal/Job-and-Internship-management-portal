@@ -1,750 +1,750 @@
-// /* ==========================================
-//    STORAGE KEYS
-// ========================================== */
+/* ==========================================
+   STORAGE KEYS
+========================================== */
 
-// const USERS_KEY = "careerconnect_users";
-// const CURRENT_USER_KEY = "careerconnect_current_user";
+const USERS_KEY = "careerconnect_users";
+const CURRENT_USER_KEY = "careerconnect_current_user";
 
 
-// /* ==========================================
-//    USER STORAGE
-// ========================================== */
+/* ==========================================
+   USER STORAGE
+========================================== */
 
-// function getUsers() {
+function getUsers() {
 
-//     const users = localStorage.getItem(USERS_KEY);
+    const users = localStorage.getItem(USERS_KEY);
 
-//     if (!users) {
-//         return [];
-//     }
+    if (!users) {
+        return [];
+    }
 
-//     return JSON.parse(users);
-// }
+    return JSON.parse(users);
+}
 
 
-// function saveUsers(users) {
+function saveUsers(users) {
 
-//     localStorage.setItem(
-//         USERS_KEY,
-//         JSON.stringify(users)
-//     );
+    localStorage.setItem(
+        USERS_KEY,
+        JSON.stringify(users)
+    );
 
-// }
+}
 
 
-// /* ==========================================
-//    ERROR FUNCTIONS
-// ========================================== */
+/* ==========================================
+   ERROR FUNCTIONS
+========================================== */
 
-// function showError(input, errorElement, message) {
+function showError(input, errorElement, message) {
 
-//     input.classList.add("error");
+    input.classList.add("error");
 
-//     errorElement.textContent = message;
+    errorElement.textContent = message;
 
-//     errorElement.classList.add("show");
+    errorElement.classList.add("show");
 
-// }
+}
 
 
-// function clearError(input, errorElement) {
+function clearError(input, errorElement) {
 
-//     input.classList.remove("error");
+    input.classList.remove("error");
 
-//     errorElement.textContent = "";
+    errorElement.textContent = "";
 
-//     errorElement.classList.remove("show");
+    errorElement.classList.remove("show");
 
-// }
+}
 
 
-// /* ==========================================
-//    MESSAGE FUNCTION
-// ========================================== */
+/* ==========================================
+   MESSAGE FUNCTION
+========================================== */
 
-// function showMessage(element, message, type) {
+function showMessage(element, message, type) {
 
-//     element.textContent = message;
+    element.textContent = message;
 
-//     element.className =
-//         "form-message show " + type;
+    element.className =
+        "form-message show " + type;
 
-// }
+}
 
 
-// /* ==========================================
-//    SIGNUP ROLE SELECTION
-// ========================================== */
+/* ==========================================
+   SIGNUP ROLE SELECTION
+========================================== */
 
-// const roleCards =
-//     document.querySelectorAll(".role-card");
+const roleCards =
+    document.querySelectorAll(".role-card");
 
-// const signupFormContainer =
-//     document.getElementById("signupFormContainer");
+const signupFormContainer =
+    document.getElementById("signupFormContainer");
 
-// const signupRole =
-//     document.getElementById("signupRole");
+const signupRole =
+    document.getElementById("signupRole");
 
-// const selectedRoleIcon =
-//     document.getElementById("selectedRoleIcon");
+const selectedRoleIcon =
+    document.getElementById("selectedRoleIcon");
 
-// const selectedRoleText =
-//     document.getElementById("selectedRoleText");
+const selectedRoleText =
+    document.getElementById("selectedRoleText");
 
-// const changeRole =
-//     document.getElementById("changeRole");
+const changeRole =
+    document.getElementById("changeRole");
 
 
-// if (roleCards.length > 0) {
+if (roleCards.length > 0) {
 
-//     roleCards.forEach(function (card) {
+    roleCards.forEach(function (card) {
 
-//         card.addEventListener("click", function () {
+        card.addEventListener("click", function () {
 
-//             /* Remove selection from all cards */
+            /* Remove selection from all cards */
 
-//             roleCards.forEach(function (item) {
+            roleCards.forEach(function (item) {
 
-//                 item.classList.remove("selected");
+                item.classList.remove("selected");
 
-//             });
+            });
 
 
-//             /* Select clicked card */
+            /* Select clicked card */
 
-//             card.classList.add("selected");
+            card.classList.add("selected");
 
 
-//             /* Get selected role */
+            /* Get selected role */
 
-//             const role =
-//                 card.getAttribute("data-role");
+            const role =
+                card.getAttribute("data-role");
 
 
-//             /* Store role */
+            /* Store role */
 
-//             signupRole.value = role;
+            signupRole.value = role;
 
 
-//             /* Update selected role information */
+            /* Update selected role information */
 
-//             if (role === "candidate") {
+            if (role === "candidate") {
 
-//                 selectedRoleIcon.textContent = "🎯";
+                selectedRoleIcon.textContent = "🎯";
 
-//                 selectedRoleText.textContent =
-//                     "Looking for a job";
+                selectedRoleText.textContent =
+                    "Looking for a job";
 
-//             } else {
+            } else {
 
-//                 selectedRoleIcon.textContent = "🏢";
+                selectedRoleIcon.textContent = "🏢";
 
-//                 selectedRoleText.textContent =
-//                     "Hiring talent";
+                selectedRoleText.textContent =
+                    "Hiring talent";
 
-//             }
+            }
 
 
-//             /* Show form */
+            /* Show form */
 
-//             signupFormContainer.classList.add("show");
+            signupFormContainer.classList.add("show");
 
-//         });
+        });
 
-//     });
+    });
 
-// }
+}
 
 
-// /* ==========================================
-//    CHANGE ROLE
-// ========================================== */
+/* ==========================================
+   CHANGE ROLE
+========================================== */
 
-// if (changeRole) {
+if (changeRole) {
 
-//     changeRole.addEventListener("click", function () {
+    changeRole.addEventListener("click", function () {
 
-//         /* Hide form */
+        /* Hide form */
 
-//         signupFormContainer.classList.remove("show");
+        signupFormContainer.classList.remove("show");
 
 
-//         /* Clear selected role */
+        /* Clear selected role */
 
-//         signupRole.value = "";
+        signupRole.value = "";
 
 
-//         roleCards.forEach(function (card) {
+        roleCards.forEach(function (card) {
 
-//             card.classList.remove("selected");
+            card.classList.remove("selected");
 
-//         });
+        });
 
 
-//         /* Scroll back to role selection */
+        /* Scroll back to role selection */
 
-//         document
-//             .getElementById("roleSelection")
-//             .scrollIntoView({
-//                 behavior: "smooth",
-//                 block: "center"
-//             });
+        document
+            .getElementById("roleSelection")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
 
-//     });
+    });
 
-// }
+}
 
 
-// /* ==========================================
-//    SIGNUP
-// ========================================== */
+/* ==========================================
+   SIGNUP
+========================================== */
 
-// const signupForm =
-//     document.getElementById("signupForm");
+const signupForm =
+    document.getElementById("signupForm");
 
 
-// if (signupForm) {
+if (signupForm) {
 
-//     signupForm.addEventListener(
-//         "submit",
-//         function (event) {
+    signupForm.addEventListener(
+        "submit",
+        function (event) {
 
-//             event.preventDefault();
+            event.preventDefault();
 
 
-//             /* Get fields */
+            /* Get fields */
 
-//             const name =
-//                 document.getElementById("signupName");
+            const name =
+                document.getElementById("signupName");
 
-//             const email =
-//                 document.getElementById("signupEmail");
+            const email =
+                document.getElementById("signupEmail");
 
-//             const role =
-//                 document.getElementById("signupRole");
+            const role =
+                document.getElementById("signupRole");
 
-//             const password =
-//                 document.getElementById("signupPassword");
+            const password =
+                document.getElementById("signupPassword");
 
-//             const confirmPassword =
-//                 document.getElementById(
-//                     "signupConfirmPassword"
-//                 );
+            const confirmPassword =
+                document.getElementById(
+                    "signupConfirmPassword"
+                );
 
 
-//             /* Get error elements */
+            /* Get error elements */
 
-//             const nameError =
-//                 document.getElementById(
-//                     "signupNameErr"
-//                 );
+            const nameError =
+                document.getElementById(
+                    "signupNameErr"
+                );
 
-//             const emailError =
-//                 document.getElementById(
-//                     "signupEmailErr"
-//                 );
+            const emailError =
+                document.getElementById(
+                    "signupEmailErr"
+                );
 
-//             const passwordError =
-//                 document.getElementById(
-//                     "signupPasswordErr"
-//                 );
+            const passwordError =
+                document.getElementById(
+                    "signupPasswordErr"
+                );
 
-//             const confirmPasswordError =
-//                 document.getElementById(
-//                     "signupConfirmPasswordErr"
-//                 );
+            const confirmPasswordError =
+                document.getElementById(
+                    "signupConfirmPasswordErr"
+                );
 
 
-//             const message =
-//                 document.getElementById(
-//                     "signupMsg"
-//                 );
+            const message =
+                document.getElementById(
+                    "signupMsg"
+                );
 
 
-//             /* Clear previous errors */
+            /* Clear previous errors */
 
-//             clearError(name, nameError);
+            clearError(name, nameError);
 
-//             clearError(email, emailError);
+            clearError(email, emailError);
 
-//             clearError(password, passwordError);
+            clearError(password, passwordError);
 
-//             clearError(
-//                 confirmPassword,
-//                 confirmPasswordError
-//             );
+            clearError(
+                confirmPassword,
+                confirmPasswordError
+            );
 
 
-//             message.className =
-//                 "form-message";
+            message.className =
+                "form-message";
 
 
-//             let valid = true;
+            let valid = true;
 
 
-//             /* ======================================
-//                NAME VALIDATION
-//             ====================================== */
+            /* ======================================
+               NAME VALIDATION
+            ====================================== */
 
-//             if (name.value.trim() === "") {
+            if (name.value.trim() === "") {
 
-//                 showError(
-//                     name,
-//                     nameError,
-//                     "Please enter your full name."
-//                 );
+                showError(
+                    name,
+                    nameError,
+                    "Please enter your full name."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* ======================================
-//                ROLE VALIDATION
-//             ====================================== */
+            /* ======================================
+               ROLE VALIDATION
+            ====================================== */
 
-//             if (role.value === "") {
+            if (role.value === "") {
 
-//                 showMessage(
-//                     message,
-//                     "Please select what you are here to do.",
-//                     "error"
-//                 );
+                showMessage(
+                    message,
+                    "Please select what you are here to do.",
+                    "error"
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* ======================================
-//                GMAIL VALIDATION
-//             ====================================== */
+            /* ======================================
+               GMAIL VALIDATION
+            ====================================== */
 
-//             const emailName =
-//                 email.value.trim();
+            const emailName =
+                email.value.trim();
 
 
-//             const gmailNamePattern =
-//                 /^[A-Za-z0-9]+(\.[A-Za-z0-9]+)*$/;
+            const gmailNamePattern =
+                /^[A-Za-z0-9]+(\.[A-Za-z0-9]+)*$/;
 
 
-//             if (
-//                 emailName === "" ||
-//                 !gmailNamePattern.test(emailName)
-//             ) {
+            if (
+                emailName === "" ||
+                !gmailNamePattern.test(emailName)
+            ) {
 
-//                 showError(
-//                     email,
-//                     emailError,
-//                     "Please enter a valid Gmail username."
-//                 );
+                showError(
+                    email,
+                    emailError,
+                    "Please enter a valid Gmail username."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* Create complete Gmail address */
+            /* Create complete Gmail address */
 
-//             const fullEmail =
-//                 emailName.toLowerCase() +
-//                 "@gmail.com";
+            const fullEmail =
+                emailName.toLowerCase() +
+                "@gmail.com";
 
 
-//             /* ======================================
-//                PASSWORD VALIDATION
-//             ====================================== */
+            /* ======================================
+               PASSWORD VALIDATION
+            ====================================== */
 
-//             if (password.value.length < 6) {
+            if (password.value.length < 6) {
 
-//                 showError(
-//                     password,
-//                     passwordError,
-//                     "Password must be at least 6 characters."
-//                 );
+                showError(
+                    password,
+                    passwordError,
+                    "Password must be at least 6 characters."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* ======================================
-//                CONFIRM PASSWORD
-//             ====================================== */
+            /* ======================================
+               CONFIRM PASSWORD
+            ====================================== */
 
-//             if (
-//                 confirmPassword.value !==
-//                 password.value
-//             ) {
+            if (
+                confirmPassword.value !==
+                password.value
+            ) {
 
-//                 showError(
-//                     confirmPassword,
-//                     confirmPasswordError,
-//                     "Passwords do not match."
-//                 );
+                showError(
+                    confirmPassword,
+                    confirmPasswordError,
+                    "Passwords do not match."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* Stop if invalid */
+            /* Stop if invalid */
 
-//             if (!valid) {
-//                 return;
-//             }
+            if (!valid) {
+                return;
+            }
 
 
-//             /* ======================================
-//                CHECK EXISTING USER
-//             ====================================== */
+            /* ======================================
+               CHECK EXISTING USER
+            ====================================== */
 
-//             const users = getUsers();
+            const users = getUsers();
 
 
-//             const existingUser =
-//                 users.find(function (user) {
+            const existingUser =
+                users.find(function (user) {
 
-//                     return (
-//                         user.email.toLowerCase() ===
-//                         fullEmail
-//                     );
+                    return (
+                        user.email.toLowerCase() ===
+                        fullEmail
+                    );
 
-//                 });
+                });
 
 
-//             if (existingUser) {
+            if (existingUser) {
 
-//                 showError(
-//                     email,
-//                     emailError,
-//                     "An account with this Gmail already exists."
-//                 );
+                showError(
+                    email,
+                    emailError,
+                    "An account with this Gmail already exists."
+                );
 
-//                 return;
+                return;
 
-//             }
+            }
 
 
-//             /* ======================================
-//                CREATE USER
-//             ====================================== */
+            /* ======================================
+               CREATE USER
+            ====================================== */
 
-//             const newUser = {
+            const newUser = {
 
-//                 name: name.value.trim(),
+                name: name.value.trim(),
 
-//                 email: fullEmail,
+                email: fullEmail,
 
-//                 role: role.value,
+                role: role.value,
 
-//                 password: password.value
+                password: password.value
 
-//             };
+            };
 
 
-//             users.push(newUser);
+            users.push(newUser);
 
-//             saveUsers(users);
+            saveUsers(users);
 
 
-//             /* ======================================
-//                SUCCESS
-//             ====================================== */
+            /* ======================================
+               SUCCESS
+            ====================================== */
 
-//             showMessage(
-//                 message,
-//                 "Account created successfully! Redirecting to login...",
-//                 "success"
-//             );
+            showMessage(
+                message,
+                "Account created successfully! Redirecting to login...",
+                "success"
+            );
 
 
-//             setTimeout(function () {
+            setTimeout(function () {
 
-//                 window.location.href =
-//                     "login.html";
+                window.location.href =
+                    "login.html";
 
-//             }, 1200);
+            }, 1200);
 
-//         }
-//     );
+        }
+    );
 
-// }
+}
 
 
-// /* ==========================================
-//    LOGIN
-// ========================================== */
+/* ==========================================
+   LOGIN
+========================================== */
 
-// const loginForm =
-//     document.getElementById("loginForm");
+const loginForm =
+    document.getElementById("loginForm");
 
 
-// if (loginForm) {
+if (loginForm) {
 
-//     loginForm.addEventListener(
-//         "submit",
-//         function (event) {
+    loginForm.addEventListener(
+        "submit",
+        function (event) {
 
-//             event.preventDefault();
+            event.preventDefault();
 
 
-//             const email =
-//                 document.getElementById(
-//                     "loginEmail"
-//                 );
+            const email =
+                document.getElementById(
+                    "loginEmail"
+                );
 
-//             const password =
-//                 document.getElementById(
-//                     "loginPassword"
-//                 );
+            const password =
+                document.getElementById(
+                    "loginPassword"
+                );
 
-//             const role =
-//                 document.getElementById(
-//                     "loginRole"
-//                 );
+            const role =
+                document.getElementById(
+                    "loginRole"
+                );
 
 
-//             const emailError =
-//                 document.getElementById(
-//                     "loginEmailErr"
-//                 );
+            const emailError =
+                document.getElementById(
+                    "loginEmailErr"
+                );
 
-//             const passwordError =
-//                 document.getElementById(
-//                     "loginPasswordErr"
-//                 );
+            const passwordError =
+                document.getElementById(
+                    "loginPasswordErr"
+                );
 
-//             const roleError =
-//                 document.getElementById(
-//                     "loginRoleErr"
-//                 );
+            const roleError =
+                document.getElementById(
+                    "loginRoleErr"
+                );
 
 
-//             const message =
-//                 document.getElementById(
-//                     "loginMsg"
-//                 );
+            const message =
+                document.getElementById(
+                    "loginMsg"
+                );
 
 
-//             clearError(
-//                 email,
-//                 emailError
-//             );
+            clearError(
+                email,
+                emailError
+            );
 
-//             clearError(
-//                 password,
-//                 passwordError
-//             );
+            clearError(
+                password,
+                passwordError
+            );
 
-//             clearError(
-//                 role,
-//                 roleError
-//             );
+            clearError(
+                role,
+                roleError
+            );
 
 
-//             message.className =
-//                 "form-message";
+            message.className =
+                "form-message";
 
 
-//             let valid = true;
+            let valid = true;
 
 
-//             /* Gmail username */
+            /* Gmail username */
 
-//             const emailName =
-//                 email.value.trim();
+            const emailName =
+                email.value.trim();
 
 
-//             if (emailName === "") {
+            if (emailName === "") {
 
-//                 showError(
-//                     email,
-//                     emailError,
-//                     "Please enter your Gmail username."
-//                 );
+                showError(
+                    email,
+                    emailError,
+                    "Please enter your Gmail username."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* Password */
+            /* Password */
 
-//             if (password.value.length < 6) {
+            if (password.value.length < 6) {
 
-//                 showError(
-//                     password,
-//                     passwordError,
-//                     "Password must be at least 6 characters."
-//                 );
+                showError(
+                    password,
+                    passwordError,
+                    "Password must be at least 6 characters."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             /* Role */
+            /* Role */
 
-//             if (role.value === "") {
+            if (role.value === "") {
 
-//                 showError(
-//                     role,
-//                     roleError,
-//                     "Please select your role."
-//                 );
+                showError(
+                    role,
+                    roleError,
+                    "Please select your role."
+                );
 
-//                 valid = false;
+                valid = false;
 
-//             }
+            }
 
 
-//             if (!valid) {
-//                 return;
-//             }
+            if (!valid) {
+                return;
+            }
 
 
-//             /* Complete Gmail */
+            /* Complete Gmail */
 
-//             const fullEmail =
-//                 emailName.toLowerCase() +
-//                 "@gmail.com";
+            const fullEmail =
+                emailName.toLowerCase() +
+                "@gmail.com";
 
 
-//             /* Find user */
+            /* Find user */
 
-//             const users = getUsers();
+            const users = getUsers();
 
 
-//             const user =
-//                 users.find(function (item) {
+            const user =
+                users.find(function (item) {
 
-//                     return (
-//                         item.email.toLowerCase() ===
-//                         fullEmail &&
+                    return (
+                        item.email.toLowerCase() ===
+                        fullEmail &&
 
-//                         item.password ===
-//                         password.value &&
+                        item.password ===
+                        password.value &&
 
-//                         item.role ===
-//                         role.value
-//                     );
+                        item.role ===
+                        role.value
+                    );
 
-//                 });
+                });
 
 
-//             if (!user) {
+            if (!user) {
 
-//                 showMessage(
-//                     message,
-//                     "Invalid Gmail, password or role.",
-//                     "error"
-//                 );
+                showMessage(
+                    message,
+                    "Invalid Gmail, password or role.",
+                    "error"
+                );
 
-//                 return;
+                return;
 
-//             }
+            }
 
 
-//             /* Store logged-in user */
+            /* Store logged-in user */
 
-//             const loggedInUser = {
+            const loggedInUser = {
 
-//                 name: user.name,
+                name: user.name,
 
-//                 email: user.email,
+                email: user.email,
 
-//                 role: user.role
+                role: user.role
 
-//             };
+            };
 
 
-//             localStorage.setItem(
-//                 CURRENT_USER_KEY,
-//                 JSON.stringify(loggedInUser)
-//             );
+            localStorage.setItem(
+                CURRENT_USER_KEY,
+                JSON.stringify(loggedInUser)
+            );
 
 
-//             showMessage(
-//                 message,
-//                 "Login successful!",
-//                 "success"
-//             );
+            showMessage(
+                message,
+                "Login successful!",
+                "success"
+            );
 
 
-//             /* Redirect */
+            /* Redirect */
 
-//             setTimeout(function () {
+            setTimeout(function () {
 
-//                 if (user.role === "candidate") {
+                if (user.role === "candidate") {
 
-//                     window.location.href =
-//                         "../candidate/dashboard.html";
+                    window.location.href =
+                        "../candidate/dashboard.html";
 
-//                 } else {
+                } else {
 
-//                     window.location.href =
-//                         "../recruiter/dashboard.html";
+                    window.location.href =
+                        "../recruiter/dashboard.html";
 
-//                 }
+                }
 
-//             }, 800);
+            }, 800);
 
-//         }
-//     );
+        }
+    );
 
-// }
+}
 
 
-// /* ==========================================
-//    CURRENT USER
-// ========================================== */
+/* ==========================================
+   CURRENT USER
+========================================== */
 
-// function getCurrentUser() {
+function getCurrentUser() {
 
-//     const user =
-//         localStorage.getItem(
-//             CURRENT_USER_KEY
-//         );
+    const user =
+        localStorage.getItem(
+            CURRENT_USER_KEY
+        );
 
 
-//     if (!user) {
-//         return null;
-//     }
+    if (!user) {
+        return null;
+    }
 
 
-//     return JSON.parse(user);
+    return JSON.parse(user);
 
-// }
+}
 
 
-// /* ==========================================
-//    LOGOUT
-// ========================================== */
+/* ==========================================
+   LOGOUT
+========================================== */
 
-// function logout() {
+function logout() {
 
-//     localStorage.removeItem(
-//         CURRENT_USER_KEY
-//     );
+    localStorage.removeItem(
+        CURRENT_USER_KEY
+    );
 
 
-//     window.location.href =
-//         "login.html";
+    window.location.href =
+        "login.html";
 
-// }
+}
 
 
-// /* ==========================================
-//    AUTH OBJECT
-// ========================================== */
+/* ==========================================
+   AUTH OBJECT
+========================================== */
 
-// window.Auth = {
+window.Auth = {
 
-//     getCurrentUser:
-//         getCurrentUser,
+    getCurrentUser:
+        getCurrentUser,
 
-//     logout:
-//         logout
+    logout:
+        logout
 
-// };
+};
