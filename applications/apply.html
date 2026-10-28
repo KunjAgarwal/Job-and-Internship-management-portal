@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | CareerConnect</title>
+    <link rel="stylesheet" href="../css/applications.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>CareerConnect</h2>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="../jobs/internships.html">Internships</a>
+            <a href="../user/profile.html">Profile</a>
+            <a href="applications.html">Applications</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="apply-header">
+            <div>
+                <p class="small-heading">APPLICATION</p>
+                <h1>Apply for an Opportunity</h1>
+                <p>
+                    Complete the form below to submit your application.
+                    Make sure your information is correct before submitting.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="apply-layout">
+
+            <div class="opportunity-card">
+
+                <p class="small-heading">OPPORTUNITY</p>
+
+                <div class="company-logo large-logo">
+                    AT
+                </div>
+
+                <h2 id="jobTitleDisplay">
+                    Software Developer
+                </h2>
+
+                <p class="company-name">
+                    ABC Technologies
+                </p>
+
+                <div class="opportunity-details">
+                    <div>
+                        <span>Type</span>
+                        <strong>Full Time Job</strong>
+                    </div>
+
+                    <div>
+                        <span>Location</span>
+                        <strong>Delhi</strong>
+                    </div>
+
+                    <div>
+                        <span>Experience</span>
+                        <strong>Fresher</strong>
+                    </div>
+                </div>
+
+                <div class="opportunity-note">
+                    <strong>Before you apply</strong>
+                    <p>
+                        Make sure your contact details and resume are
+                        up to date. Your application will be shared
+                        with the employer.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <p class="small-heading">YOUR DETAILS</p>
+
+                <h2>Application Form</h2>
+
+                <p class="form-description">
+                    Enter your details carefully.
+                </p>
+
+                <form id="applicationForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="resume">
+                            Resume Link
+                        </label>
+
+                        <input
+                            type="url" id="resume" placeholder="https://example.com/resume"required>
+
+                        <span class="input-help">
+                            Add a publicly accessible link to your resume.
+                        </span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="message">
+                            Cover Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="6"
+                            placeholder="Tell the employer briefly why you are interested in this opportunity..."
+                        ></textarea>
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <a href="applications.html" class="cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit">
+                            Submit Application
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- <script src="applications.js"></script> -->
+
+</body>
+</html>

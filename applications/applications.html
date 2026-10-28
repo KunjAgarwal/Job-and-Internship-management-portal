@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications | CareerConnect</title>
+    <link rel="stylesheet" href="../css/applications.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>CareerConnect</h2>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../jobs/jobs.html">Jobs</a>
+            <a href="../jobs/internships.html">Internships</a>
+            <a href="../user/profile.html">Profile</a>
+            <a href="applications.html">Applications</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="application-header">
+            <div>
+                <p class="small-heading">CAREER DASHBOARD</p>
+                <h1>My Applications</h1>
+                <p class="page-description">
+                    Keep track of the jobs and internships you have applied for.
+                </p>
+            </div>
+
+            <a href="../jobs/jobs.html" class="browse-btn">
+                Browse Opportunities
+            </a>
+        </section>
+
+
+        <section class="application-stats">
+
+            <div class="stat-card">
+                <span class="stat-label">Total Applications</span>
+                <h2>2</h2>
+                <p>Applications submitted</p>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">In Review</span>
+                <h2>1</h2>
+                <p>Waiting for response</p>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Shortlisted</span>
+                <h2>1</h2>
+                <p>Applications shortlisted</p>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Withdrawn</span>
+                <h2>0</h2>
+                <p>Applications withdrawn</p>
+            </div>
+
+        </section>
+
+
+        <section class="applications-section">
+
+            <div class="section-title">
+                <div>
+                    <h2>Recent Applications</h2>
+                    <p>Your latest job and internship applications</p>
+                </div>
+
+                <select id="applicationFilter">
+                    <option value="all">All Applications</option>
+                    <option value="job">Jobs</option>
+                    <option value="internship">Internships</option>
+                    <option value="applied">Applied</option>
+                    <option value="shortlisted">Shortlisted</option>
+                </select>
+            </div>
+
+
+            <div class="applications-container">
+
+                <div class="application-card">
+
+                    <div class="card-top">
+                        <div class="company-logo">
+                            GLA
+                        </div>
+
+                        <span class="application-status applied">
+                            Applied
+                        </span>
+                    </div>
+
+                    <div class="application-content">
+
+                        <span class="application-type">
+                            Full Time Job
+                        </span>
+
+                        <h3>Software Developer</h3>
+
+                        <p class="company-name">
+                            ABC Technologies
+                        </p>
+
+                        <div class="application-info">
+                            <span>Delhi</span>
+                            <span>16 Sep 2026</span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="application-details.html">
+                            View Application
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="application-card">
+
+                    <div class="card-top">
+                        <div class="company-logo">
+                            ACC
+                        </div>
+
+                        <span class="application-status shortlisted">
+                            Shortlisted
+                        </span>
+                    </div>
+
+                    <div class="application-content">
+
+                        <span class="application-type">
+                            Internship
+                        </span>
+
+                        <h3>Frontend Developer Intern</h3>
+
+                        <p class="company-name">
+                            XYZ Solutions
+                        </p>
+
+                        <div class="application-info">
+                            <span>Noida</span>
+                            <span>14 Sep 2026</span>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="application-details.html">
+                            View Application
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- <script src="applications.js"></script> -->
+
+</body>
+</html>
