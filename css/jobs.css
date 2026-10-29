@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f8fa;
+    color: #111827;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-container {
+    max-width: 1380px;
+    margin: auto;
+    padding: 14px 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #111827;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #374151;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-links .active {
+    color: #2563eb;
+}
+
+.signup-btn {
+    background-color: #2563eb;
+    color: #ffffff !important;
+
+    padding: 11px 18px;
+    border-radius: 6px;
+}
+
+.signup-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page-container {
+    max-width: 1380px;
+    margin: auto;
+    padding: 70px 32px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.page-hero {
+    padding: 55px 0 70px;
+}
+
+.eyebrow {
+    margin: 0 0 16px;
+
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.page-hero h1 {
+    margin: 0;
+
+    color: #111827;
+    font-size: 56px;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.hero-text {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #6b7280;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+    padding: 35px 0;
+}
+
+.search-section h2 {
+    margin-bottom: 22px;
+
+    font-size: 25px;
+    color: #111827;
+}
+
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+input,
+select {
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    font-size: 15px;
+    color: #374151;
+}
+
+input {
+    width: 320px;
+}
+
+select {
+    min-width: 180px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+
+/* =========================
+   LISTING
+========================= */
+
+.listing-section {
+    padding: 55px 0;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 34px;
+    color: #111827;
+}
+
+
+/* =========================
+   JOB / INTERNSHIP CARDS
+========================= */
+
+#jobsContainer,
+#internshipsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.job-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    padding: 26px;
+
+    transition: 0.2s ease;
+}
+
+.job-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.job-card h2,
+.job-card h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    color: #111827;
+}
+
+.job-card h3 {
+    font-size: 22px;
+}
+
+.job-card p {
+    margin: 10px 0;
+
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.job-card strong {
+    color: #111827;
+}
+
+.job-card a {
+    display: inline-block;
+
+    margin-top: 14px;
+
+    color: #2563eb;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.job-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+#jobDetails,
+#internshipDetails {
+    margin-bottom: 30px;
+}
+
+#jobDetails .job-card,
+#internshipDetails .job-card {
+    max-width: 900px;
+}
+
+#internshipDetails h2 {
+    margin-bottom: 22px;
+    color: #111827;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.secondary-btn {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    color: #374151;
+    text-decoration: none;
+}
+
+.secondary-btn:hover {
+    background-color: #f3f4f6;
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+#jobsContainer > p,
+#internshipsContainer > p {
+    grid-column: 1 / -1;
+
+    padding: 25px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar-container {
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .page-container {
+        padding: 50px 20px;
+    }
+
+    .page-hero h1 {
+        font-size: 44px;
+    }
+
+    #jobsContainer,
+    #internshipsContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .page-hero {
+        padding: 35px 0 45px;
+    }
+
+    .page-hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    input,
+    select {
+        width: 100%;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+}
