@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+.navbar {
+    min-height: 72px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e8ebf0;
+}
+
+.navbar .logo {
+    color: #172033;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    position: relative;
+    color: #596273;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.2s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #2563eb;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    width: 100%;
+}
+
+.navbar .nav-btn,
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.navbar .nav-btn {
+    padding: 9px 16px;
+}
+
+.navbar .nav-btn:hover,
+.primary-btn:hover {
+    background: #1d4ed8;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.hero {
+    min-height: 520px;
+    padding: 95px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent 55%),
+        #ffffff;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.small-heading {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    color: #111827;
+    font-size: 56px;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero-text {
+    max-width: 620px;
+    color: #667085;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border: 1px solid #d7dce3;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #344054;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.secondary-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.features {
+    padding: 85px 7%;
+}
+
+.section-heading {
+    max-width: 600px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.section-heading h2,
+.cta h2 {
+    color: #111827;
+    font-size: 34px;
+    line-height: 1.25;
+    letter-spacing: -1px;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 30px;
+    border: 1px solid #e5e9ef;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #cbd8ef;
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.07);
+}
+
+.feature-card .icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+    color: #172033;
+    font-size: 20px;
+}
+
+.feature-card p {
+    color: #667085;
+    font-size: 14px;
+}
+
+.cta {
+    margin: 20px 7% 85px;
+    padding: 42px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-radius: 12px;
+    background: #172033;
+}
+
+.cta .small-heading {
+    color: #93c5fd;
+}
+
+.cta h2 {
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.cta p:not(.small-heading) {
+    color: #cbd5e1;
+}
+
+.cta .primary-btn {
+    flex-shrink: 0;
+}
+
+footer {
+    min-height: 120px;
+    padding: 30px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-top: 1px solid #e8ebf0;
+    background: #ffffff;
+}
+
+footer h3 {
+    color: #172033;
+    font-size: 18px;
+}
+
+footer p {
+    color: #667085;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .features {
+        padding: 65px 5%;
+    }
+
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+        margin: 20px 5% 65px;
+        padding: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        align-items: center;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 55px 5%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    .cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

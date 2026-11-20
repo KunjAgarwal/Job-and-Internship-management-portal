@@ -80,9 +80,15 @@ function initializeApplicationForm(form) {
     const messageInput = document.getElementById("message");
 
     // Populate applicant information if previously saved.
-    const profile = JSON.parse(
-        localStorage.getItem("careerConnectProfile") || "{}"
-    );
+    let profile = {};
+
+    try {
+        profile = JSON.parse(
+            localStorage.getItem("careerConnectProfile") || "{}"
+        );
+    } catch (error) {
+        console.error("Unable to read saved profile:", error);
+    }
 
     if (profile.name && nameInput) nameInput.value = profile.name;
     if (profile.phone && phoneInput) phoneInput.value = profile.phone;
@@ -358,7 +364,7 @@ function initializeApplicationsDashboard() {
                     </div>
 
                     <div class="card-footer">
-                        <a href="application-details.html?id=${encodeURIComponent(application.id)}">
+                        <a href="application_details.html?id=${encodeURIComponent(application.id)}">
                             View Application
                         </a>
                     </div>

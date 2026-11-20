@@ -496,6 +496,31 @@ main > h1 {
     color: #15803d;
 }
 
+.application-status.in-review {
+    background: #fef3c7;
+    color: #a16207;
+}
+
+.application-status.selected {
+    background: #ecfdf3;
+    color: #166534;
+}
+
+.application-status.rejected,
+.application-status.withdrawn {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 40px;
+    border: 1px dashed #d7dce3;
+    border-radius: 10px;
+    background: #ffffff;
+    text-align: center;
+}
+
 .application-content {
     padding: 22px 0;
 }
