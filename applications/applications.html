@@ -42,25 +42,32 @@
 
             <div class="stat-card">
                 <span class="stat-label">Total Applications</span>
-                <h2>2</h2>
+                <h2 data-stat="total">0</h2>
                 <p>Applications submitted</p>
             </div>
 
             <div class="stat-card">
-                <span class="stat-label">In Review</span>
-                <h2>1</h2>
+                <span class="stat-label">Pending</span>
+                <h2 data-stat="applied">0</h2>
                 <p>Waiting for response</p>
             </div>
 
             <div class="stat-card">
-                <span class="stat-label">Shortlisted</span>
-                <h2>1</h2>
+                <span class="stat-label">In Review</span>
+                <h2 data-stat="in-review">0</h2>
                 <p>Applications shortlisted</p>
             </div>
 
             <div class="stat-card">
+                <span class="stat-label">Shortlisted</span>
+                <h2 data-stat="shortlisted">0</h2>
+                <p>Applications shortlisted</p>
+            </div>
+            <div class="stat-card"><span class="stat-label">Selected</span><h2 data-stat="selected">0</h2><p>Offers received</p></div>
+            <div class="stat-card"><span class="stat-label">Rejected</span><h2 data-stat="rejected">0</h2><p>Applications declined</p></div>
+            <div class="stat-card">
                 <span class="stat-label">Withdrawn</span>
-                <h2>0</h2>
+                <h2 data-stat="withdrawn">0</h2>
                 <p>Applications withdrawn</p>
             </div>
 
@@ -88,90 +95,17 @@
                 </select>
             </div>
 
-
-            <div class="applications-container">
-
-                <div class="application-card">
-
-                    <div class="card-top">
-                        <div class="company-logo">
-                            GLA
-                        </div>
-
-                        <span class="application-status applied">
-                            Applied
-                        </span>
-                    </div>
-
-                    <div class="application-content">
-
-                        <span class="application-type">
-                            Full Time Job
-                        </span>
-
-                        <h3>Software Developer</h3>
-
-                        <p class="company-name">
-                            ABC Technologies
-                        </p>
-
-                        <div class="application-info">
-                            <span>Delhi</span>
-                            <span>16 Sep 2026</span>
-                        </div>
-
-                    </div>
-
-                    <div class="card-footer">
-                        <a href="application_details.html">
-                            View Application
-                        </a>
-                    </div>
-
-                </div>
-
-
-                <div class="application-card">
-
-                    <div class="card-top">
-                        <div class="company-logo">
-                            ACC
-                        </div>
-
-                        <span class="application-status shortlisted">
-                            Shortlisted
-                        </span>
-                    </div>
-
-                    <div class="application-content">
-
-                        <span class="application-type">
-                            Internship
-                        </span>
-
-                        <h3>Frontend Developer Intern</h3>
-
-                        <p class="company-name">
-                            XYZ Solutions
-                        </p>
-
-                        <div class="application-info">
-                            <span>Noida</span>
-                            <span>14 Sep 2026</span>
-                        </div>
-
-                    </div>
-
-                    <div class="card-footer">
-                        <a href="application_details.html">
-                            View Application
-                        </a>
-                    </div>
-
-                </div>
-
+            <div class="application-tools">
+                <input id="applicationSearch" type="search" aria-label="Search applications" placeholder="Search title or company">
+                <select id="typeFilter" aria-label="Filter by opportunity type"><option value="all">All types</option><option value="job">Jobs</option><option value="internship">Internships</option></select>
+                <select id="applicationSort" aria-label="Sort applications"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="alpha">Alphabetical</option></select>
+                <button id="clearApplicationFilters" type="button" class="secondary-action">Clear filters</button>
+                <button id="refreshApplications" type="button" class="secondary-action">Refresh</button>
             </div>
 
+
+            <div class="applications-container" aria-live="polite"></div>
+            <button id="loadMoreApplications" type="button" class="secondary-action load-more" hidden>Load more</button>
         </section>
 
     </main>
