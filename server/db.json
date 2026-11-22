@@ -7,7 +7,7 @@
       "location": "Noida",
       "salary": "6-8 LPA",
       "type": "Full Time",
-      "description": "We are looking for a frontend developer to build responsive and user-friendly web applications."
+      "description": "Develop responsive and user-friendly web applications using modern frontend technologies."
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "location": "Bangalore",
       "salary": "8-12 LPA",
       "type": "Full Time",
-      "description": "We are looking for a backend developer to design and develop reliable server-side applications."
+      "description": "Design and develop scalable backend services and REST APIs."
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "location": "Delhi",
       "salary": "10-14 LPA",
       "type": "Full Time",
-      "description": "Join our engineering team to develop scalable software solutions and work on real-world products."
+      "description": "Build and maintain software applications while collaborating with engineering teams."
     },
     {
       "id": 4,
@@ -34,9 +34,82 @@
       "location": "Pune",
       "salary": "5-7 LPA",
       "type": "Full Time",
-      "description": "We are looking for a UI developer who can create clean and responsive user interfaces."
+      "description": "Create clean, accessible and responsive user interfaces."
+    },
+    {
+      "id": 5,
+      "title": "Java Developer",
+      "company": "DevSphere",
+      "location": "Bangalore",
+      "salary": "8-12 LPA",
+      "type": "Full Time",
+      "description": "Develop Java applications and maintain existing software systems."
+    },
+    {
+      "id": 6,
+      "title": "React Developer",
+      "company": "WebCore",
+      "location": "Noida",
+      "salary": "6-8 LPA",
+      "type": "Full Time",
+      "description": "Build interactive frontend applications using React and JavaScript."
+    },
+    {
+      "id": 7,
+      "title": "QA Engineer",
+      "company": "QualityHub",
+      "location": "Hyderabad",
+      "salary": "4-6 LPA",
+      "type": "Full Time",
+      "description": "Perform software testing and identify application defects."
+    },
+    {
+      "id": 8,
+      "title": "DevOps Engineer",
+      "company": "CloudBridge",
+      "location": "Bangalore",
+      "salary": "12-16 LPA",
+      "type": "Full Time",
+      "description": "Manage deployment pipelines and cloud infrastructure."
+    },
+    {
+      "id": 9,
+      "title": "Python Developer",
+      "company": "DataNest",
+      "location": "Pune",
+      "salary": "8-12 LPA",
+      "type": "Full Time",
+      "description": "Develop backend applications and automation solutions using Python."
+    },
+    {
+      "id": 10,
+      "title": "Full Stack Developer",
+      "company": "TechNova",
+      "location": "Delhi",
+      "salary": "8-12 LPA",
+      "type": "Full Time",
+      "description": "Develop complete web applications with frontend and backend functionality."
+    },
+    {
+      "id": 11,
+      "title": "Data Analyst",
+      "company": "InsightLab",
+      "location": "Noida",
+      "salary": "5-7 LPA",
+      "type": "Full Time",
+      "description": "Analyze datasets and generate meaningful business insights."
+    },
+    {
+      "id": 12,
+      "title": "Software Tester",
+      "company": "TestWorks",
+      "location": "Hyderabad",
+      "salary": "4-6 LPA",
+      "type": "Full Time",
+      "description": "Test software applications and ensure product quality."
     }
   ],
+
   "internships": [
     {
       "id": 1,
@@ -45,7 +118,7 @@
       "location": "Noida",
       "salary": "15000/month",
       "type": "Internship",
-      "description": "Work with the development team to build and improve web applications using modern web technologies."
+      "description": "Work with developers to build and improve web applications."
     },
     {
       "id": 2,
@@ -54,7 +127,7 @@
       "location": "Bangalore",
       "salary": "20000/month",
       "type": "Internship",
-      "description": "Assist the backend team in developing APIs and working with server-side application logic."
+      "description": "Assist in developing REST APIs and backend application logic."
     },
     {
       "id": 3,
@@ -63,7 +136,7 @@
       "location": "Delhi",
       "salary": "18000/month",
       "type": "Internship",
-      "description": "Work on software development tasks and gain practical experience in application development."
+      "description": "Work on software development tasks and application features."
     },
     {
       "id": 4,
@@ -72,7 +145,79 @@
       "location": "Pune",
       "salary": "12000/month",
       "type": "Internship",
-      "description": "Assist the design team in creating clean and responsive interfaces for web applications."
+      "description": "Assist the design team in creating modern user interfaces."
+    },
+    {
+      "id": 5,
+      "title": "Java Developer Intern",
+      "company": "DevSphere",
+      "location": "Bangalore",
+      "salary": "20000/month",
+      "type": "Internship",
+      "description": "Develop Java-based features and understand application development workflows."
+    },
+    {
+      "id": 6,
+      "title": "Frontend Developer Intern",
+      "company": "WebCore",
+      "location": "Noida",
+      "salary": "15000/month",
+      "type": "Internship",
+      "description": "Assist in developing interactive frontend components."
+    },
+    {
+      "id": 7,
+      "title": "Data Analyst Intern",
+      "company": "InsightLab",
+      "location": "Hyderabad",
+      "salary": "18000/month",
+      "type": "Internship",
+      "description": "Analyze data and prepare reports using analytical tools."
+    },
+    {
+      "id": 8,
+      "title": "Cloud Computing Intern",
+      "company": "CloudBridge",
+      "location": "Bangalore",
+      "salary": "25000/month",
+      "type": "Internship",
+      "description": "Gain practical experience with cloud infrastructure and deployment."
+    },
+    {
+      "id": 9,
+      "title": "Python Developer Intern",
+      "company": "DataNest",
+      "location": "Pune",
+      "salary": "20000/month",
+      "type": "Internship",
+      "description": "Work on Python programming and backend development tasks."
+    },
+    {
+      "id": 10,
+      "title": "QA Testing Intern",
+      "company": "QualityHub",
+      "location": "Delhi",
+      "salary": "12000/month",
+      "type": "Internship",
+      "description": "Assist in manual testing and software quality assurance."
+    },
+    {
+      "id": 11,
+      "title": "Full Stack Developer Intern",
+      "company": "TechNova",
+      "location": "Noida",
+      "salary": "18000/month",
+      "type": "Internship",
+      "description": "Contribute to frontend and backend development of web applications."
+    },
+    {
+      "id": 12,
+      "title": "Cybersecurity Intern",
+      "company": "SecureNet",
+      "location": "Hyderabad",
+      "salary": "25000/month",
+      "type": "Internship",
+      "description": "Learn security fundamentals and assist with application security assessments."
     }
   ]
 }
