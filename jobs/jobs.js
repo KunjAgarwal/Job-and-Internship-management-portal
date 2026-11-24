@@ -1,3 +1,4 @@
+
 const jobsContainer = document.getElementById("jobsContainer");
 const searchInput = document.getElementById("searchInput");
 const locationFilter = document.getElementById("locationFilter");
@@ -20,164 +21,240 @@ let allInternships = [];
 
 
 /* =========================
+   COMMON HELPERS
+========================= */
+
+// Safely convert API values into strings
+function getText(value) {
+    return value == null ? "" : String(value);
+}
+
+
+// Create an element containing plain text
+function createTextElement(tag, text, className = "") {
+    const element = document.createElement(tag);
+
+    element.textContent = getText(text);
+
+    if (className) {
+        element.classList.add(className);
+    }
+
+    return element;
+}
+
+
+// Create a labelled detail paragraph
+function createDetailParagraph(label, value) {
+    const paragraph = document.createElement("p");
+    const strong = document.createElement("strong");
+
+    strong.textContent = `${label}: `;
+
+    paragraph.appendChild(strong);
+    paragraph.appendChild(document.createTextNode(getText(value)));
+
+    return paragraph;
+}
+
+
+// Extract numeric salary/stipend value for sorting
+function getSalaryAmount(salary) {
+    const amount = Number.parseFloat(getText(salary).replace(/,/g, ""));
+
+    return Number.isFinite(amount) ? amount : null;
+}
+
+
+// Sort records while keeping missing salary values at the end
+function sortBySalary(records, sortOrder) {
+    if (!sortOrder) {
+        return records;
+    }
+
+    return records.sort((a, b) => {
+        const amountA = getSalaryAmount(a.salary);
+        const amountB = getSalaryAmount(b.salary);
+
+        if (amountA === null && amountB === null) return 0;
+        if (amountA === null) return 1;
+        if (amountB === null) return -1;
+
+        return sortOrder === "low-to-high"
+            ? amountA - amountB
+            : amountB - amountA;
+    });
+}
+
+
+// Populate a filter dropdown
+function populateFilter(selectElement, values) {
+    const uniqueValues = [
+        ...new Set(
+            values
+                .map(value => getText(value).trim())
+                .filter(Boolean)
+        )
+    ];
+
+    uniqueValues.forEach(value => {
+        const option = document.createElement("option");
+
+        option.value = value;
+        option.textContent = value;
+
+        selectElement.appendChild(option);
+    });
+}
+
+
+// Validate API list response
+function validateListData(data) {
+    if (!Array.isArray(data)) {
+        throw new Error("Invalid API response");
+    }
+
+    return data.filter(item => item && typeof item === "object");
+}
+
+
+/* =========================
    JOBS
 ========================= */
 
 async function fetchJobs() {
-
-    jobsContainer.innerHTML = "<p>Loading jobs...</p>";
+    jobsContainer.textContent = "Loading jobs...";
 
     try {
-
         const response = await fetch("/jobs");
 
         if (!response.ok) {
             throw new Error("Failed to load jobs");
         }
 
-        allJobs = await response.json();
+        const data = await response.json();
+
+        allJobs = validateListData(data);
 
         populateJobFilters();
         renderJobs(allJobs);
 
     } catch (error) {
-
-        jobsContainer.innerHTML = "<p>Unable to load jobs.</p>";
+        console.error("Error fetching jobs:", error);
+        jobsContainer.textContent = "Unable to load jobs.";
     }
 }
 
 
 function populateJobFilters() {
+    populateFilter(
+        locationFilter,
+        allJobs.map(job => job.location)
+    );
 
-    const locations = [...new Set(allJobs.map(job => job.location))];
-
-    const salaries = [...new Set(allJobs.map(job => job.salary))];
-
-    locations.forEach(location => {
-
-        const option = document.createElement("option");
-
-        option.value = location;
-        option.textContent = location;
-
-        locationFilter.appendChild(option);
-    });
-
-    salaries.forEach(salary => {
-
-        const option = document.createElement("option");
-
-        option.value = salary;
-        option.textContent = salary;
-
-        salaryFilter.appendChild(option);
-    });
+    populateFilter(
+        salaryFilter,
+        allJobs.map(job => job.salary)
+    );
 }
 
 
 function renderJobs(jobs) {
-
     jobsContainer.innerHTML = "";
 
     if (jobs.length === 0) {
-
-        jobsContainer.innerHTML = "<p>No jobs found.</p>";
+        jobsContainer.textContent = "No jobs found.";
         return;
     }
 
     jobs.forEach(job => {
-
         const jobCard = document.createElement("article");
 
         jobCard.classList.add("job-card");
 
-        jobCard.innerHTML = `
-            <h3>${job.title}</h3>
-            <p>${job.company}</p>
-            <p>${job.location}</p>
-            <p>${job.salary}</p>
-            <p>${job.type}</p>
-            <a href="job-details.html?id=${job.id}">View Details</a>
-        `;
+        jobCard.appendChild(
+            createTextElement("h3", job.title)
+        );
+
+        jobCard.appendChild(
+            createTextElement("p", job.company)
+        );
+
+        jobCard.appendChild(
+            createTextElement("p", job.location)
+        );
+
+        jobCard.appendChild(
+            createTextElement("p", job.salary)
+        );
+
+        jobCard.appendChild(
+            createTextElement("p", job.type)
+        );
+
+        const detailsLink = document.createElement("a");
+
+        detailsLink.href =
+            `job-details.html?id=${encodeURIComponent(getText(job.id))}`;
+
+        detailsLink.textContent = "View Details";
+
+        jobCard.appendChild(detailsLink);
 
         jobsContainer.appendChild(jobCard);
     });
 }
 
 
-// Extract numeric salary value for sorting
-
-function getSalaryAmount(salary) {
-
-    return Number.parseFloat(salary) || 0;
-}
-
-
 function applyJobFilters() {
-
-    const searchText = searchInput.value.toLowerCase();
+    const searchText = searchInput.value.trim().toLowerCase();
 
     const selectedLocation = locationFilter.value;
-
     const selectedSalary = salaryFilter.value;
-
     const sortOrder = salarySort.value;
 
     const filteredJobs = allJobs.filter(job => {
+        const title = getText(job.title).toLowerCase();
+        const company = getText(job.company).toLowerCase();
+        const location = getText(job.location).toLowerCase();
 
         const matchesSearch =
-            job.title.toLowerCase().includes(searchText) ||
-            job.company.toLowerCase().includes(searchText) ||
-            job.location.toLowerCase().includes(searchText);
+            title.includes(searchText) ||
+            company.includes(searchText) ||
+            location.includes(searchText);
 
         const matchesLocation =
             selectedLocation === "" ||
-            job.location === selectedLocation;
+            getText(job.location) === selectedLocation;
 
         const matchesSalary =
             selectedSalary === "" ||
-            job.salary === selectedSalary;
+            getText(job.salary) === selectedSalary;
 
         return matchesSearch && matchesLocation && matchesSalary;
     });
 
-
-    // Apply salary sorting
-
-    if (sortOrder === "low-to-high") {
-
-        filteredJobs.sort((a, b) =>
-            getSalaryAmount(a.salary) - getSalaryAmount(b.salary)
-        );
-
-    } else if (sortOrder === "high-to-low") {
-
-        filteredJobs.sort((a, b) =>
-            getSalaryAmount(b.salary) - getSalaryAmount(a.salary)
-        );
-    }
+    sortBySalary(filteredJobs, sortOrder);
 
     renderJobs(filteredJobs);
 }
 
 
 async function fetchJobDetails() {
-
     const params = new URLSearchParams(window.location.search);
-
     const jobId = params.get("id");
 
-    if (!jobId) {
-
-        jobDetails.innerHTML = "<p>Job not found.</p>";
+    if (!jobId || !jobId.trim()) {
+        jobDetails.textContent = "Job not found.";
         return;
     }
 
-    jobDetails.innerHTML = "<p>Loading job details...</p>";
+    jobDetails.textContent = "Loading job details...";
 
     try {
-
-        const response = await fetch(`/jobs/${jobId}`);
+        const response = await fetch(
+            `/jobs/${encodeURIComponent(jobId)}`
+        );
 
         if (!response.ok) {
             throw new Error("Job not found");
@@ -185,21 +262,44 @@ async function fetchJobDetails() {
 
         const job = await response.json();
 
-        jobDetails.innerHTML = `
-            <article class="job-card">
-                <h2>${job.title}</h2>
+        if (!job || typeof job !== "object" || Array.isArray(job)) {
+            throw new Error("Invalid job data");
+        }
 
-                <p><strong>Company:</strong> ${job.company}</p>
-                <p><strong>Location:</strong> ${job.location}</p>
-                <p><strong>Salary:</strong> ${job.salary}</p>
-                <p><strong>Type:</strong> ${job.type}</p>
-                <p><strong>Description:</strong> ${job.description}</p>
-            </article>
-        `;
+        jobDetails.innerHTML = "";
+
+        const jobCard = document.createElement("article");
+        jobCard.classList.add("job-card");
+
+        jobCard.appendChild(
+            createTextElement("h2", job.title)
+        );
+
+        jobCard.appendChild(
+            createDetailParagraph("Company", job.company)
+        );
+
+        jobCard.appendChild(
+            createDetailParagraph("Location", job.location)
+        );
+
+        jobCard.appendChild(
+            createDetailParagraph("Salary", job.salary)
+        );
+
+        jobCard.appendChild(
+            createDetailParagraph("Type", job.type)
+        );
+
+        jobCard.appendChild(
+            createDetailParagraph("Description", job.description)
+        );
+
+        jobDetails.appendChild(jobCard);
 
     } catch (error) {
-
-        jobDetails.innerHTML = "<p>Unable to load job details.</p>";
+        console.error("Error fetching job details:", error);
+        jobDetails.textContent = "Unable to load job details.";
     }
 }
 
@@ -209,89 +309,83 @@ async function fetchJobDetails() {
 ========================= */
 
 async function fetchInternships() {
-
-    internshipsContainer.innerHTML = "<p>Loading internships...</p>";
+    internshipsContainer.textContent = "Loading internships...";
 
     try {
-
         const response = await fetch("/internships");
 
         if (!response.ok) {
             throw new Error("Failed to load internships");
         }
 
-        allInternships = await response.json();
+        const data = await response.json();
+
+        allInternships = validateListData(data);
 
         populateInternshipFilters();
         renderInternships(allInternships);
 
     } catch (error) {
-
-        internshipsContainer.innerHTML =
-            "<p>Unable to load internships.</p>";
+        console.error("Error fetching internships:", error);
+        internshipsContainer.textContent = "Unable to load internships.";
     }
 }
 
 
 function populateInternshipFilters() {
+    populateFilter(
+        internshipLocationFilter,
+        allInternships.map(internship => internship.location)
+    );
 
-    const locations = [
-        ...new Set(allInternships.map(internship => internship.location))
-    ];
-
-    const salaries = [
-        ...new Set(allInternships.map(internship => internship.salary))
-    ];
-
-    locations.forEach(location => {
-
-        const option = document.createElement("option");
-
-        option.value = location;
-        option.textContent = location;
-
-        internshipLocationFilter.appendChild(option);
-    });
-
-    salaries.forEach(salary => {
-
-        const option = document.createElement("option");
-
-        option.value = salary;
-        option.textContent = salary;
-
-        internshipSalaryFilter.appendChild(option);
-    });
+    populateFilter(
+        internshipSalaryFilter,
+        allInternships.map(internship => internship.salary)
+    );
 }
 
 
 function renderInternships(internships) {
-
     internshipsContainer.innerHTML = "";
 
     if (internships.length === 0) {
-
-        internshipsContainer.innerHTML = "<p>No internships found.</p>";
+        internshipsContainer.textContent = "No internships found.";
         return;
     }
 
     internships.forEach(internship => {
-
         const internshipCard = document.createElement("article");
 
         internshipCard.classList.add("job-card");
 
-        internshipCard.innerHTML = `
-            <h3>${internship.title}</h3>
-            <p>${internship.company}</p>
-            <p>${internship.location}</p>
-            <p>${internship.salary}</p>
-            <p>${internship.type}</p>
+        internshipCard.appendChild(
+            createTextElement("h3", internship.title)
+        );
 
-            <a href="internships.html?id=${internship.id}">
-                View Details
-            </a>
-        `;
+        internshipCard.appendChild(
+            createTextElement("p", internship.company)
+        );
+
+        internshipCard.appendChild(
+            createTextElement("p", internship.location)
+        );
+
+        internshipCard.appendChild(
+            createTextElement("p", internship.salary)
+        );
+
+        internshipCard.appendChild(
+            createTextElement("p", internship.type)
+        );
+
+        const detailsLink = document.createElement("a");
+
+        detailsLink.href =
+            `internships.html?id=${encodeURIComponent(getText(internship.id))}`;
+
+        detailsLink.textContent = "View Details";
+
+        internshipCard.appendChild(detailsLink);
 
         internshipsContainer.appendChild(internshipCard);
     });
@@ -299,71 +393,54 @@ function renderInternships(internships) {
 
 
 function applyInternshipFilters() {
-
-    const searchText = internshipSearchInput.value.toLowerCase();
+    const searchText = internshipSearchInput.value.trim().toLowerCase();
 
     const selectedLocation = internshipLocationFilter.value;
-
     const selectedSalary = internshipSalaryFilter.value;
-
     const sortOrder = internshipSalarySort.value;
 
     const filteredInternships = allInternships.filter(internship => {
+        const title = getText(internship.title).toLowerCase();
+        const company = getText(internship.company).toLowerCase();
+        const location = getText(internship.location).toLowerCase();
 
         const matchesSearch =
-            internship.title.toLowerCase().includes(searchText) ||
-            internship.company.toLowerCase().includes(searchText) ||
-            internship.location.toLowerCase().includes(searchText);
+            title.includes(searchText) ||
+            company.includes(searchText) ||
+            location.includes(searchText);
 
         const matchesLocation =
             selectedLocation === "" ||
-            internship.location === selectedLocation;
+            getText(internship.location) === selectedLocation;
 
         const matchesSalary =
             selectedSalary === "" ||
-            internship.salary === selectedSalary;
+            getText(internship.salary) === selectedSalary;
 
         return matchesSearch && matchesLocation && matchesSalary;
     });
 
-
-    // Apply stipend sorting
-
-    if (sortOrder === "low-to-high") {
-
-        filteredInternships.sort((a, b) =>
-            getSalaryAmount(a.salary) - getSalaryAmount(b.salary)
-        );
-
-    } else if (sortOrder === "high-to-low") {
-
-        filteredInternships.sort((a, b) =>
-            getSalaryAmount(b.salary) - getSalaryAmount(a.salary)
-        );
-    }
+    sortBySalary(filteredInternships, sortOrder);
 
     renderInternships(filteredInternships);
 }
 
 
 async function fetchInternshipDetails() {
-
     const params = new URLSearchParams(window.location.search);
-
     const internshipId = params.get("id");
 
-    if (!internshipId) {
-
-        internshipDetails.innerHTML = "<p>Internship not found.</p>";
+    if (!internshipId || !internshipId.trim()) {
+        internshipDetails.textContent = "Internship not found.";
         return;
     }
 
-    internshipDetails.innerHTML =
-        "<p>Loading internship details...</p>";
+    internshipDetails.textContent = "Loading internship details...";
 
     try {
-
-        const response = await fetch(`/internships/${internshipId}`);
+        const response = await fetch(
+            `/internships/${encodeURIComponent(internshipId)}`
+        );
 
         if (!response.ok) {
             throw new Error("Internship not found");
@@ -371,28 +448,59 @@ async function fetchInternshipDetails() {
 
         const internship = await response.json();
 
-        internshipDetails.innerHTML = `
-            <h2>Internship Details</h2>
+        if (
+            !internship ||
+            typeof internship !== "object" ||
+            Array.isArray(internship)
+        ) {
+            throw new Error("Invalid internship data");
+        }
 
-            <article class="job-card">
-                <h3>${internship.title}</h3>
+        internshipDetails.innerHTML = "";
 
-                <p><strong>Company:</strong> ${internship.company}</p>
-                <p><strong>Location:</strong> ${internship.location}</p>
-                <p><strong>Stipend:</strong> ${internship.salary}</p>
-                <p><strong>Type:</strong> ${internship.type}</p>
-                <p><strong>Description:</strong> ${internship.description}</p>
+        internshipDetails.appendChild(
+            createTextElement("h2", "Internship Details")
+        );
 
-                <a href="internships.html">
-                    Back to Internships
-                </a>
-            </article>
-        `;
+        const internshipCard = document.createElement("article");
+        internshipCard.classList.add("job-card");
+
+        internshipCard.appendChild(
+            createTextElement("h3", internship.title)
+        );
+
+        internshipCard.appendChild(
+            createDetailParagraph("Company", internship.company)
+        );
+
+        internshipCard.appendChild(
+            createDetailParagraph("Location", internship.location)
+        );
+
+        internshipCard.appendChild(
+            createDetailParagraph("Stipend", internship.salary)
+        );
+
+        internshipCard.appendChild(
+            createDetailParagraph("Type", internship.type)
+        );
+
+        internshipCard.appendChild(
+            createDetailParagraph("Description", internship.description)
+        );
+
+        const backLink = document.createElement("a");
+
+        backLink.href = "internships.html";
+        backLink.textContent = "Back to Internships";
+
+        internshipCard.appendChild(backLink);
+
+        internshipDetails.appendChild(internshipCard);
 
     } catch (error) {
-
-        internshipDetails.innerHTML =
-            "<p>Unable to load internship details.</p>";
+        console.error("Error fetching internship details:", error);
+        internshipDetails.textContent = "Unable to load internship details.";
     }
 }
 
@@ -402,7 +510,6 @@ async function fetchInternshipDetails() {
 ========================= */
 
 if (jobsContainer) {
-
     searchInput.addEventListener("input", applyJobFilters);
 
     locationFilter.addEventListener("change", applyJobFilters);
@@ -416,27 +523,21 @@ if (jobsContainer) {
 
 
 if (jobDetails) {
-
     fetchJobDetails();
 }
 
 
 if (internshipsContainer && internshipListingSection) {
-
     const params = new URLSearchParams(window.location.search);
-
     const internshipId = params.get("id");
 
     if (internshipId) {
-
         internshipListingSection.style.display = "none";
-
         internshipDetails.style.display = "block";
 
         fetchInternshipDetails();
 
     } else {
-
         internshipDetails.style.display = "none";
 
         internshipSearchInput.addEventListener(
