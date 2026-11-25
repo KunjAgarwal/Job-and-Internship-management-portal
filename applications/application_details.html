@@ -1,249 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Details | CareerConnect</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>Application details | CareerConnect</title>
     <link rel="stylesheet" href="../css/applications.css">
 </head>
 
 <body>
-
-    <header>
-        <h2>CareerConnect</h2>
-
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../jobs/jobs.html">Jobs</a>
-            <a href="../jobs/internships.html">Internships</a>
-            <a href="../user/profile.html">Profile</a>
-            <a href="applications.html">Applications</a>
-        </nav>
+    <header class="app-nav"><a class="app-brand" href="../index.html"><span
+                class="brand-mark">C</span>Career<span>Connect</span></a><button class="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="primaryNav"
+            aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <nav id="primaryNav" aria-label="Main navigation"><a href="../index.html">Home</a><a
+                href="../jobs/jobs.html">Jobs</a><a href="../jobs/internships.html">Internships</a><a
+                href="../user/profile.html">Employers</a><a class="is-current" href="applications.html"
+                aria-current="page">My applications</a></nav>
     </header>
-
-
-    <main>
-
-        <div class="details-page-header">
-
-            <div>
+    <main class="application-shell details-page">
+        <a class="back-link" href="applications.html">← Back to my applications</a>
+        <section class="details-page-header">
+            <div class="details-company-logo" aria-hidden="true">CC</div>
+            <div class="details-title">
                 <p class="small-heading">APPLICATION DETAILS</p>
-
-                <h1>Software Developer</h1>
-
-                <p class="details-company">
-                    ABC Technologies · Delhi
-                </p>
-            </div>
-
-            <span class="application-status applied">
-                Applied
-            </span>
-
-        </div>
-
-
+                <h1>Loading application…</h1>
+                <p class="details-company">CareerConnect</p>
+            </div><span class="application-status applied">Applied</span>
+        </section>
         <section class="details-layout">
-
             <div class="details-main">
-
-                <div class="details-card">
-
+                <article class="details-card">
                     <div class="card-heading">
                         <div>
-                            <h2>Job Information</h2>
-                            <p>Details about the opportunity</p>
+                            <h2>Opportunity overview</h2>
+                            <p>Role information and requirements</p>
                         </div>
                     </div>
-
                     <div class="details-grid">
-
-                        <div class="info-item">
-                            <span>Job Title</span>
-                            <strong>Software Developer</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Company</span>
-                            <strong>ABC Technologies</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Location</span>
-                            <strong>Delhi</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Employment Type</span>
-                            <strong>Full Time</strong>
-                        </div>
-                        <div class="info-item"><span>Experience Required</span><strong>Not provided</strong></div>
-                        <div class="info-item"><span>Salary or Stipend</span><strong>Not provided</strong></div>
-
+                        <div class="info-item"><span>Job title</span><strong>—</strong></div>
+                        <div class="info-item"><span>Company</span><strong>—</strong></div>
+                        <div class="info-item"><span>Location</span><strong>—</strong></div>
+                        <div class="info-item"><span>Employment type</span><strong>—</strong></div>
+                        <div class="info-item"><span>Compensation</span><strong id="detailSalary">—</strong></div>
+                        <div class="info-item"><span>Applied on</span><strong id="detailAppliedOn">—</strong></div>
                     </div>
-
-                </div>
-
-
-                <div class="details-card">
-
+                    <div class="opportunity-description">
+                        <h3>About this opportunity</h3>
+                        <p id="detailDescription">Opportunity description is not available.</p>
+                        <h3>Skills you’ll use</h3>
+                        <div id="detailSkills" class="detail-skills"><span>Not specified</span></div>
+                    </div>
+                </article>
+                <article class="details-card">
                     <div class="card-heading">
                         <div>
-                            <h2>Applicant Information</h2>
-                            <p>Information submitted with your application</p>
+                            <h2>Your application</h2>
+                            <p>Information you shared with the employer</p>
                         </div>
                     </div>
-
                     <div class="details-grid">
-
-                        <div class="info-item">
-                            <span>Full Name</span>
-                            <strong>Kunj Agarwal</strong>
+                        <div class="info-item"><span>Full name</span><strong>—</strong></div>
+                        <div class="info-item"><span>Email</span><strong>—</strong></div>
+                        <div class="info-item"><span>Phone</span><strong>—</strong></div>
+                        <div class="info-item"><span>Education</span><strong id="detailEducation">—</strong></div>
+                        <div class="info-item"><span>College / university</span><strong id="detailCollege">—</strong>
                         </div>
-
-                        <div class="info-item">
-                            <span>Email</span>
-                            <strong>kunj@example.com</strong>
-                        </div>
-
-                        <div class="info-item">
-                            <span>Phone</span>
-                            <strong>9876543210</strong>
-                        </div>
-                        <div class="info-item"><span>Skills</span><strong>Not provided</strong></div>
-                        <div class="info-item"><span>Experience</span><strong>Not provided</strong></div>
-
-                        <div class="info-item">
-                            <span>Resume</span>
-                            <a href="javascript:void(0)" class="resume-link">
-                                View Resume
-                            </a>
-                        </div>
-
+                        <div class="info-item"><span>Skills</span><strong id="detailApplicantSkills">—</strong></div>
+                        <div class="info-item"><span>Availability</span><strong id="detailAvailability">—</strong></div>
+                        <div class="info-item"><span>Additional information</span><strong
+                                id="detailAdditionalInfo">—</strong></div>
+                        <div class="info-item"><span>Resume</span><a href="#" class="resume-link">View resume</a></div>
                     </div>
-
-                </div>
-
-
-                <div class="details-card">
-
-                    <div class="card-heading">
-                        <div>
-                            <h2>Cover Message</h2>
-                            <p>Your message to the employer</p>
-                        </div>
+                    <div class="cover-message-block">
+                        <h3>Cover letter</h3>
+                        <p class="cover-message">No cover letter was provided.</p>
                     </div>
-
-                    <p class="cover-message">
-                        I am interested in the Software Developer position
-                        at ABC Technologies. I believe my technical skills
-                        and interest in software development make me a
-                        suitable candidate for this opportunity.
-                    </p>
-
-                </div>
-
+                </article>
             </div>
-
-
             <aside class="details-sidebar">
-
-                <div class="status-card">
-
-                    <p class="small-heading">APPLICATION STATUS</p>
-
-                    <div class="status-display">
-                        <span class="status-dot"></span>
-
-                        <div>
-                            <strong>Applied</strong>
+                <section class="status-card">
+                    <p class="small-heading">CURRENT STATUS</p>
+                    <div class="status-display"><span class="status-dot"></span>
+                        <div><strong>Applied</strong>
                             <p>Your application has been submitted.</p>
                         </div>
                     </div>
-
-                <div class="status-date">
-                        <span>Applied On</span>
-                    <strong id="submittedDate">—</strong>
-                </div>
-                <div class="status-date">
-                    <span>Last Updated</span>
-                    <strong id="updatedDate">—</strong>
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-card">
-
-                    <h3>Application Timeline</h3>
-
-                    <div class="timeline">
-
-                        <div class="timeline-item active">
-
-                            <span class="timeline-dot"></span>
-
-                            <div>
-                                <strong>Application Submitted</strong>
-                                <p>16 September 2026</p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="timeline-item">
-
-                            <span class="timeline-dot"></span>
-
-                            <div>
-                                <strong>Under Review</strong>
-                                <p>Waiting for employer response</p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="timeline-item">
-
-                            <span class="timeline-dot"></span>
-
-                            <div>
-                                <strong>Final Decision</strong>
-                                <p>Not available yet</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="withdraw-card">
-
-                    <h3>Withdraw Application</h3>
-
-                    <p>
-                        No longer interested in this opportunity?
-                        You can withdraw your application.
-                    </p>
-
-                    <button id="withdrawApplication" type="button">
-                        Withdraw Application
-                    </button>
-
-                </div>
-
+                    <div class="status-date"><span>Application date</span><strong>—</strong></div>
+                </section>
+                <section class="timeline-card">
+                    <h2>Application progress</h2>
+                    <p class="timeline-intro">We’ll keep this timeline updated as your application moves forward.</p>
+                    <div class="timeline" aria-label="Application progress"></div>
+                </section>
+                <section class="withdraw-card" id="withdraw">
+                    <h3>Changed your mind?</h3>
+                    <p>You can withdraw your application. This action cannot be undone.</p><button
+                        type="button">Withdraw application</button>
+                </section>
             </aside>
-
         </section>
-
     </main>
-
-
+    <script src="../js/demo-data.js?v=2"></script>
     <script src="applications.js"></script>
-
 </body>
-
 
 </html>
