@@ -50,6 +50,7 @@ async function initializeEmployerWizard() {
         form.hidden = true;
         return;
     }
+    
 
     try {
         const data = await CareerConnectData.load();
