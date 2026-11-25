@@ -45,6 +45,7 @@
             return;
         }
 
+        
         const login = actions.querySelector('a[href*="login.html"]');
         const signup = actions.querySelector('a[href*="signup.html"]');
         const applications = actions.querySelector(".dashboard-link");
