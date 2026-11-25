@@ -12,6 +12,7 @@
         if (redirect && target.origin === location.origin) nextLink.searchParams.set("next", redirect);
         link.href = nextLink.href;
     });
+    
     form.addEventListener("submit", event => {
         event.preventDefault();
         message.textContent = "";
