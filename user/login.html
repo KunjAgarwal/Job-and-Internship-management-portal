@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>Log in | CareerConnect</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body class="auth-page">
+    <header class="auth-nav"><a class="logo" href="../index.html"><span class="logo-mark"
+                aria-hidden="true">C</span><span>Career<span>Connect</span></span></a><span class="auth-nav-note">New to
+            CareerConnect? <a href="signup.html">Create an account</a></span></header>
+    <main class="auth-layout">
+        <section class="auth-story"><span class="auth-kicker">YOUR NEXT CHAPTER STARTS HERE</span>
+            <h1>Make your next move count.</h1>
+            <p>Sign in to pick up where you left off, explore new opportunities, and keep every application in one
+                place.</p>
+            <ul class="auth-benefits">
+                <li><span class="auth-check">✓</span> Discover roles matched to your goals</li>
+                <li><span class="auth-check">✓</span> Track your applications with ease</li>
+                <li><span class="auth-check">✓</span> Keep your profile ready to apply</li>
+            </ul>
+        </section>
+        <section class="auth-card">
+            <h2>Welcome back</h2>
+            <p class="auth-intro">Enter your account details to continue.</p>
+            <form class="auth-form" data-mode="login">
+                <div class="auth-field"><label for="email">Email address</label><input id="email" name="email"
+                        type="email" autocomplete="email" placeholder="you@example.com" required></div>
+                <div class="auth-field"><label for="password">Password</label><input id="password" name="password"
+                        type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                </div>
+                <p class="auth-message" role="alert" aria-live="polite"></p><button class="auth-submit"
+                    type="submit">Log in</button>
+            </form>
+            <p class="auth-switch">New here? <a href="signup.html">Create your account</a></p>
+            <p class="auth-note">Demo account details stay in this browser only.</p>
+        </section>
+    </main>
+    <script src="auth.js"></script>
+</body>
+
+</html>

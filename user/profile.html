@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Employer posting | CareerConnect</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="../index.html" aria-label="CareerConnect home"><span class="logo-mark" aria-hidden="true">C</span><span>Career<span>Connect</span></span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-dropdown" href="../jobs/jobs.html">Jobs <span aria-hidden="true">⌄</span></a>
+            <a class="nav-dropdown" href="../jobs/internships.html">Internships <span aria-hidden="true">⌄</span></a>
+            <a class="nav-dropdown is-current" href="profile.html" aria-current="page">Employers</a>
+        </nav>
+        <div class="nav-actions">
+            <form class="nav-search" action="../index.html" role="search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+                <input type="search" name="q" placeholder="Search" aria-label="Search opportunities">
+            </form>
+            <a class="button button-outline" href="login.html">Login</a>
+            <a class="button button-primary" href="signup.html">Sign up</a>
+            <a class="dashboard-link" href="../applications/applications.html" aria-label="My applications"><svg class="dashboard-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg><span class="dashboard-label">My applications</span></a>
+        </div>
+    </header>
+    <main class="employer-wizard-page">
+        <ol class="wizard-progress" aria-label="Opportunity posting steps">
+            <li class="wizard-step is-active" data-step-indicator="0" aria-current="step">
+                <span class="wizard-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3 20v-1a6 6 0 0 1 12 0v1m1-12a3 3 0 0 1 0 6m2 2a5 5 0 0 1 3 5"></path></svg></span>
+                <span>Personal Details</span>
+            </li>
+            <li class="wizard-step" data-step-indicator="1">
+                <span class="wizard-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-13 5h18m-11 0v2h4v-2"></path></svg></span>
+                <span>Organization Details</span>
+            </li>
+            <li class="wizard-step" data-step-indicator="2">
+                <span class="wizard-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"></path><path d="M14 3v5h5m-10 5h6m-6 4h6"></path></svg></span>
+                <span>Post Internship/Job</span>
+            </li>
+        </ol>
+
+        <h1 class="wizard-title" id="wizardTitle" tabindex="-1">Personal details</h1>
+        <form id="employerWizard" class="wizard-card" novalidate>
+            <div class="wizard-stage" data-step-panel="0" aria-labelledby="personalDetailsHeading">
+                <h2 class="sr-only" id="personalDetailsHeading">Personal details</h2>
+                <div class="wizard-notice">Please provide your contact details to proceed. Phone verification in this demo checks the number format only; no SMS is sent.</div>
+                <div class="wizard-fields">
+                    <div class="wizard-field">
+                        <label for="firstName">First name</label>
+                        <input id="firstName" name="firstName" autocomplete="given-name" required>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="lastName">Last name</label>
+                        <input id="lastName" name="lastName" autocomplete="family-name" required>
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="designation">Designation</label>
+                        <input id="designation" name="designation" placeholder="E.g. HR Manager" required>
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="phone">Mobile number</label>
+                        <div class="wizard-phone-row">
+                            <label class="sr-only" for="countryCode">Country calling code</label>
+                            <select id="countryCode" name="countryCode" aria-label="Country calling code">
+                                <option value="+91">+91</option>
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+61">+61</option>
+                            </select>
+                            <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="Mobile number" required>
+                            <button class="wizard-verify" id="verifyPhone" type="button">Verify</button>
+                        </div>
+                        <small class="wizard-field-note" id="phoneStatus" role="status">Enter your number, then select Verify.</small>
+                    </div>
+                </div>
+                <div class="wizard-actions wizard-actions-end">
+                    <p class="wizard-action-hint" id="personalStepHint">Complete all fields and verify your phone number to continue.</p>
+                    <button class="primary-btn wizard-next" type="button" data-next disabled>Next</button>
+                </div>
+            </div>
+
+            <div class="wizard-stage" data-step-panel="1" aria-labelledby="organizationDetailsHeading" hidden>
+                <h2 class="sr-only" id="organizationDetailsHeading">Organization details</h2>
+                <div class="wizard-notice">Tell candidates a little about your organization.</div>
+                <div class="wizard-fields">
+                    <div class="wizard-field wizard-field-full">
+                        <label for="company">Organization name</label>
+                        <input id="company" name="company" autocomplete="organization" required>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="industry">Industry</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select an industry</option>
+                            <option>Technology</option>
+                            <option>Finance</option>
+                            <option>Healthcare</option>
+                            <option>Education</option>
+                            <option>Media</option>
+                            <option>Consulting</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="companySize">Organization size</label>
+                        <select id="companySize" name="companySize" required>
+                            <option value="">Select organization size</option>
+                            <option>1–10 employees</option>
+                            <option>11–50 employees</option>
+                            <option>51–200 employees</option>
+                            <option>201–1,000 employees</option>
+                            <option>1,001+ employees</option>
+                        </select>
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="headquarters">Headquarters location</label>
+                        <input id="headquarters" name="headquarters" autocomplete="address-level2" placeholder="City, country" required>
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="website">Organization website <span class="wizard-optional">Optional</span></label>
+                        <input id="website" name="website" type="url" autocomplete="url" placeholder="https://example.com">
+                    </div>
+                </div>
+                <div class="wizard-actions">
+                    <button class="wizard-back" type="button" data-previous>Back</button>
+                    <button class="primary-btn wizard-next" type="button" data-next disabled>Next</button>
+                </div>
+            </div>
+
+            <div class="wizard-stage" data-step-panel="2" aria-labelledby="postOpportunityHeading" hidden>
+                <h2 class="sr-only" id="postOpportunityHeading">Post internship or job</h2>
+                <div class="wizard-notice">Add the key details candidates need to decide if this opportunity is right for them.</div>
+                <section class="employer-verification" id="employerVerification" aria-labelledby="verificationHeading" data-status="unverified">
+                    <h3 id="verificationHeading">Employer verification required</h3>
+                    <p id="verificationMessage" role="status" aria-live="polite">Verify your organization before posting a job or internship.</p>
+                    <label for="registrationNumber">Business registration number</label>
+                    <input id="registrationNumber" name="registrationNumber" autocomplete="off" placeholder="GSTIN, CIN, or equivalent">
+                    <button class="wizard-verify" id="requestVerification" type="button">Request verification</button>
+                    <small>Requests are saved for review in this browser demo. No documents are uploaded, and posting stays locked until an account is marked verified.</small>
+                </section>
+                <div class="wizard-fields">
+                    <div class="wizard-field">
+                        <label for="opportunityType">Opportunity type</label>
+                        <select id="opportunityType" name="type" required>
+                            <option value="">Select type</option>
+                            <option value="job">Job</option>
+                            <option value="internship">Internship</option>
+                        </select>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option>Engineering</option>
+                            <option>Data Science</option>
+                            <option>Design</option>
+                            <option>MBA</option>
+                            <option>Media</option>
+                            <option>Part-time</option>
+                            <option>Work from home</option>
+                            <option>Big brands</option>
+                        </select>
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="title">Job or internship title</label>
+                        <input id="title" name="title" placeholder="E.g. Frontend Developer Intern" required>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="location">Work location</label>
+                        <input id="location" name="location" placeholder="City or Remote" required>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="employmentType">Work type and duration</label>
+                        <input id="employmentType" name="employmentType" placeholder="Full Time or Internship · 6 months" required>
+                    </div>
+                    <div class="wizard-field">
+                        <label for="experience">Experience level</label>
+                        <input id="experience" name="experience" placeholder="Fresher or 1–2 years">
+                    </div>
+                    <div class="wizard-field">
+                        <label for="salary">Compensation <span class="wizard-optional">Optional</span></label>
+                        <input id="salary" name="salary" placeholder="E.g. ₹6–8 LPA">
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="skills">Skills <span class="wizard-optional">Optional</span></label>
+                        <input id="skills" name="skills" placeholder="Separate skills with commas">
+                    </div>
+                    <div class="wizard-field wizard-field-full">
+                        <label for="description">Opportunity description</label>
+                        <textarea id="description" name="description" rows="5" placeholder="Describe the role, responsibilities, and what candidates can expect." required></textarea>
+                    </div>
+                </div>
+                <div class="wizard-actions">
+                    <button class="wizard-back" type="button" data-previous>Back</button>
+                    <button class="primary-btn wizard-publish" type="submit" disabled>Post opportunity</button>
+                </div>
+            </div>
+            <p class="wizard-feedback" id="wizardFeedback" role="alert" aria-live="polite"></p>
+        </form>
+
+        <section class="wizard-success" id="publishSuccess" aria-live="polite" hidden>
+            <span class="wizard-success-icon" aria-hidden="true">✓</span>
+            <h2>Your opportunity is posted</h2>
+            <p id="publishedSummary"></p>
+            <div class="wizard-success-actions">
+                <a class="primary-btn" id="viewPublishedOpportunity" href="../index.html">View opportunity</a>
+                <a class="wizard-back" id="browsePublishedType" href="../jobs/jobs.html">Browse opportunities</a>
+            </div>
+        </section>
+    </main>
+    <script src="../js/demo-data.js?v=2"></script>
+    <script src="employer.js?v=4"></script>
+    <script src="../js/auth-state.js"></script>
+</body>
+</html>
