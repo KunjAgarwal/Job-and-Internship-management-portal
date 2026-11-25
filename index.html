@@ -1,137 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
     <title>CareerConnect | Jobs & Internships</title>
     <link rel="stylesheet" href="css/common.css">
 </head>
 
-<body>
-
+<body data-opportunity-type="all" data-home-url="index.html">
     <header class="navbar">
-        <div class="logo">
-            CareerConnect
-        </div>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="jobs/jobs.html">Jobs</a>
-            <a href="jobs/internships.html">Internships</a>
-            <a href="auth/login.html">Login</a>
-            <a href="auth/signup.html" class="nav-btn">Sign Up</a>
+        <a class="logo" href="index.html" aria-label="CareerConnect home">
+            <span class="logo-mark" aria-hidden="true">C</span>
+            <span>Career<span>Connect</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-dropdown" href="jobs/jobs.html">Jobs <span aria-hidden="true">⌄</span></a>
+            <a class="nav-dropdown" href="jobs/internships.html">Internships <span aria-hidden="true">⌄</span></a>
+            <a class="nav-dropdown" href="user/profile.html">Employers</a>
         </nav>
+        <div class="nav-actions">
+            <form class="nav-search" action="index.html" role="search">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6.5"></circle>
+                    <path d="m16 16 4 4"></path>
+                </svg>
+                <input type="search" name="q" placeholder="Search" aria-label="Search opportunities">
+            </form>
+            <a class="button button-outline" href="user/login.html">Login</a>
+            <a class="button button-primary" href="user/signup.html">Sign up</a>
+            <a class="dashboard-link" href="applications/applications.html" aria-label="My applications"><svg
+                    class="dashboard-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="5" y="4" width="14" height="17" rx="2"></rect>
+                    <path d="M9 8h6M9 12h6M9 16h4"></path>
+                </svg><span class="dashboard-label">My applications</span></a>
+            <span class="nav-divider" aria-hidden="true"></span>
+            <a class="employer-link" href="#employer-contact">For Employers <span aria-hidden="true">›</span></a>
+        </div>
     </header>
 
-
     <main>
-
         <section class="hero">
-            <div class="hero-content">
-                <p class="small-heading">YOUR CAREER STARTS HERE</p>
-
-                <h1>
-                    Find the right job.
-                    <br>
-                    Start your career.
-                </h1>
-
-                <p class="hero-text">
-                    Explore job opportunities and internships from different
-                    companies and take the next step towards your career.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="jobs/jobs.html" class="primary-btn">
-                        Explore Jobs
-                    </a>
-
-                    <a href="jobs/internships.html" class="secondary-btn">
-                        Find Internships
-                    </a>
+            <div class="hero-inner">
+                <p class="hero-eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                <h1>What are you looking for today?</h1>
+                <p>Latest Internships &amp; Fresher Jobs</p>
+                <div class="hero-stats" aria-label="Portal highlights">
+                    <span><strong>Curated</strong> early-career roles</span>
+                    <span><strong>Simple</strong> application tracking</span>
                 </div>
             </div>
-
         </section>
 
-        <section class="features">
-
-            <div class="section-heading">
-                <p class="small-heading">WHAT WE OFFER</p>
-                <h2>Everything you need to get started</h2>
+        <section id="opportunities" class="board-section">
+            <div class="board-heading">
+                <div>
+                    <p class="section-eyebrow">EXPLORE OPPORTUNITIES</p>
+                    <h2>Find the right fit for you</h2>
+                    <p>Discover fresh roles from teams ready to meet you.</p>
+                </div>
+                <div class="board-tabs" aria-label="Opportunity type">
+                    <a class="board-tab is-active" href="index.html" aria-current="page">All opportunities</a>
+                    <a class="board-tab" href="jobs/jobs.html">Fresher jobs</a>
+                    <a class="board-tab" href="jobs/internships.html">Internships</a>
+                </div>
             </div>
 
-            <div class="feature-container">
-
-                <div class="feature-card">
-                    <div class="icon">01</div>
-                    <h3>Find Opportunities</h3>
-                    <p>
-                        Browse jobs and internships based on your
-                        interests, skills and career goals.
-                    </p>
+            <div class="board-controls">
+                <div class="category-pills" role="group" aria-label="Filter by category">
+                    <button class="category-pill" type="button" data-category="Big brands" aria-pressed="false"><span
+                            aria-hidden="true">✦</span> Big brands</button>
+                    <button class="category-pill" type="button" data-category="Work from home"
+                        aria-pressed="false"><span aria-hidden="true">⌂</span> Work from home</button>
+                    <button class="category-pill" type="button" data-category="Part-time" aria-pressed="false"><span
+                            aria-hidden="true">◷</span> Part-time</button>
+                    <button class="category-pill" type="button" data-category="MBA" aria-pressed="false"><span
+                            aria-hidden="true">▤</span> MBA</button>
+                    <button class="category-pill" type="button" data-category="Engineering" aria-pressed="false"><span
+                            aria-hidden="true">⌘</span> Engineering</button>
+                    <button class="category-pill" type="button" data-category="Design" aria-pressed="false"><span
+                            aria-hidden="true">✎</span> Design</button>
+                    <button class="category-pill" type="button" data-category="Data Science" aria-pressed="false"><span
+                            aria-hidden="true">⌁</span> Data Science</button>
+                    <button class="category-pill" type="button" data-category="Media" aria-pressed="false"><span
+                            aria-hidden="true">▣</span> Media</button>
                 </div>
-
-                <div class="feature-card">
-                    <div class="icon">02</div>
-                    <h3>Apply Easily</h3>
-                    <p>
-                        Submit applications with your details and
-                        keep all your applications in one place.
-                    </p>
+                <div class="listing-tools">
+                    <label class="sr-only" for="opportunitySearch">Search opportunities</label>
+                    <div class="inline-search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="6.5"></circle>
+                            <path d="m16 16 4 4"></path>
+                        </svg>
+                        <input id="opportunitySearch" type="search" placeholder="Search roles or companies">
+                    </div>
+                    <button id="filterToggle" class="filter-toggle" type="button" aria-expanded="false"
+                        aria-controls="advancedFilters" aria-label="Show filters">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 7h16M7 12h10m-7 5h4"></path>
+                            <circle cx="8" cy="7" r="1.5"></circle>
+                            <circle cx="15" cy="12" r="1.5"></circle>
+                            <circle cx="12" cy="17" r="1.5"></circle>
+                        </svg>
+                    </button>
                 </div>
-
-                <div class="feature-card">
-                    <div class="icon">03</div>
-                    <h3>Track Applications</h3>
-                    <p>
-                        Keep track of your applications and check
-                        their current status whenever you want.
-                    </p>
-                </div>
-
             </div>
 
+            <div id="advancedFilters" class="advanced-filters" hidden>
+                <label for="locationFilter">Location
+                    <select id="locationFilter">
+                        <option value="">All locations</option>
+                    </select>
+                </label>
+                <label for="typeFilter">Opportunity type
+                    <select id="typeFilter">
+                        <option value="">All types</option>
+                        <option value="job">Fresher jobs</option>
+                        <option value="internship">Internships</option>
+                    </select>
+                </label>
+                <button id="clearFilters" class="clear-filters" type="button">Clear filters</button>
+            </div>
+
+            <div class="results-heading">
+                <h3>Recommended for you</h3>
+                <p id="listingCount" class="listing-count" aria-live="polite"></p>
+            </div>
+            <section id="opportunityList" class="opportunity-list" aria-live="polite"></section>
+
+            <div class="board-bottom">
+                <div class="pagination" aria-label="Opportunity pages">
+                    <button id="previousPage" type="button" aria-label="Previous page" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m15 18-6-6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="progress-track" role="progressbar" aria-label="Listing page progress" aria-valuemin="0"
+                        aria-valuemax="100" aria-valuenow="100">
+                        <span id="pageProgress"></span>
+                    </div>
+                    <span id="pageLabel" class="page-label">1 / 1</span>
+                    <button id="nextPage" type="button" aria-label="Next page" disabled>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+                </div>
+                <a class="view-all-link" href="jobs/jobs.html">Browse all jobs <span aria-hidden="true">→</span></a>
+            </div>
         </section>
 
-
-        <section class="cta">
-
-            <div>
-                <p class="small-heading">READY TO START?</p>
-
-                <h2>
-                    Your next opportunity could be one click away.
-                </h2>
-
-                <p>
-                    Create your account and start exploring opportunities.
-                </p>
-            </div>
-
-            <a href="auth/signup.html" class="primary-btn">
-                Create Account
-            </a>
-
+        <section class="value-strip" aria-label="CareerConnect benefits">
+            <div><span class="value-icon" aria-hidden="true">✓</span><span><strong>Made for early
+                        careers</strong><small>Roles for students and fresh graduates</small></span></div>
+            <div><span class="value-icon" aria-hidden="true">↗</span><span><strong>Apply with
+                        confidence</strong><small>Keep your applications organized</small></span></div>
+            <div><span class="value-icon" aria-hidden="true">♡</span><span><strong>Find your fit</strong><small>Explore
+                        opportunities across fields</small></span></div>
         </section>
-
     </main>
 
-
-    <footer>
-
-        <div>
-            <h3>CareerConnect</h3>
-            <p>
-                Job and Internship Management Portal
-            </p>
-        </div>
-
-        <p>
-            © 2026 CareerConnect. All rights reserved.
-        </p>
-
+    <footer id="employer-contact">
+        <a class="logo footer-logo" href="index.html"><span class="logo-mark"
+                aria-hidden="true">C</span><span>Career<span>Connect</span></span></a>
+        <p>Job and Internship Management Portal</p>
+        <a href="mailto:employers@careerconnect.example">Hiring for your team? <strong>For Employers</strong></a>
+        <span>© 2026 CareerConnect. All rights reserved.</span>
     </footer>
+    <script src="js/auth-state.js"></script>
+    <script src="js/demo-data.js?v=2"></script>
+    <script src="jobs/opportunities.js?v=2"></script>
     <script src="js/home.js"></script>
 </body>
+
 </html>
