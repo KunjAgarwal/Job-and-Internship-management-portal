@@ -1,116 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
     <title>My Applications | CareerConnect</title>
     <link rel="stylesheet" href="../css/applications.css">
 </head>
 
 <body>
-
-    <header>
-        <h2>CareerConnect</h2>
-
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../jobs/jobs.html">Jobs</a>
-            <a href="../jobs/internships.html">Internships</a>
-            <a href="../user/profile.html">Profile</a>
-            <a href="applications.html">Applications</a>
+    <header class="app-nav">
+        <a class="app-brand" href="../index.html"><span class="brand-mark">C</span>Career<span>Connect</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav"
+            aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <nav id="primaryNav" aria-label="Main navigation">
+            <a href="../index.html">Home</a><a href="../jobs/jobs.html">Jobs</a><a
+                href="../jobs/internships.html">Internships</a><a href="../user/profile.html">Employers</a><a
+                class="is-current" href="applications.html" aria-current="page">My applications</a>
         </nav>
     </header>
-
-    <main>
-
+    <main class="application-shell">
         <section class="application-header">
             <div>
-                <p class="small-heading">CAREER DASHBOARD</p>
-                <h1>My Applications</h1>
-                <p class="page-description">
-                    Keep track of the jobs and internships you have applied for.
-                </p>
+                <p class="small-heading">YOUR CAREER DASHBOARD</p>
+                <h1>My applications</h1>
+                <p class="page-description">Stay on top of every opportunity and see where your applications stand.</p>
             </div>
-
-            <a href="../jobs/jobs.html" class="browse-btn">
-                Browse Opportunities
-            </a>
+            <a href="../jobs/jobs.html" class="browse-btn"><span aria-hidden="true">＋</span> Find opportunities</a>
         </section>
-
-
-        <section class="application-stats">
-
-            <div class="stat-card">
-                <span class="stat-label">Total Applications</span>
+        <section class="application-stats" aria-label="Application summary">
+            <article class="stat-card stat-total"><span class="stat-icon" aria-hidden="true">▤</span><span
+                    class="stat-label">Total applications</span>
                 <h2 data-stat="total">0</h2>
-                <p>Applications submitted</p>
-            </div>
-
-            <div class="stat-card">
-                <span class="stat-label">Pending</span>
-                <h2 data-stat="applied">0</h2>
-                <p>Waiting for response</p>
-            </div>
-
-            <div class="stat-card">
-                <span class="stat-label">In Review</span>
-                <h2 data-stat="in-review">0</h2>
-                <p>Applications shortlisted</p>
-            </div>
-
-            <div class="stat-card">
-                <span class="stat-label">Shortlisted</span>
+                <p>All applications submitted</p>
+            </article>
+            <article class="stat-card stat-pending"><span class="stat-icon" aria-hidden="true">◷</span><span
+                    class="stat-label">Pending</span>
+                <h2 data-stat="pending">0</h2>
+                <p>Awaiting a response</p>
+            </article>
+            <article class="stat-card stat-shortlisted"><span class="stat-icon" aria-hidden="true">✦</span><span
+                    class="stat-label">Shortlisted</span>
                 <h2 data-stat="shortlisted">0</h2>
-                <p>Applications shortlisted</p>
-            </div>
-            <div class="stat-card"><span class="stat-label">Selected</span><h2 data-stat="selected">0</h2><p>Offers received</p></div>
-            <div class="stat-card"><span class="stat-label">Rejected</span><h2 data-stat="rejected">0</h2><p>Applications declined</p></div>
-            <div class="stat-card">
-                <span class="stat-label">Withdrawn</span>
-                <h2 data-stat="withdrawn">0</h2>
-                <p>Applications withdrawn</p>
-            </div>
-
+                <p>Moving to the next stage</p>
+            </article>
+            <article class="stat-card stat-selected"><span class="stat-icon" aria-hidden="true">✓</span><span
+                    class="stat-label">Selected</span>
+                <h2 data-stat="selected">0</h2>
+                <p>Offers and selections</p>
+            </article>
+            <article class="stat-card stat-rejected"><span class="stat-icon" aria-hidden="true">↗</span><span
+                    class="stat-label">Rejected</span>
+                <h2 data-stat="rejected">0</h2>
+                <p>Keep going, the right role is ahead</p>
+            </article>
         </section>
-
-
-        <section class="applications-section">
-
-            <div class="section-title">
+        <section class="applications-section" aria-labelledby="listHeading">
+            <div class="list-heading">
                 <div>
-                    <h2>Recent Applications</h2>
-                    <p>Your latest job and internship applications</p>
-                </div>
-
-                <select id="applicationFilter">
-                    <option value="all">All Applications</option>
-                    <option value="job">Jobs</option>
-                    <option value="internship">Internships</option>
-                    <option value="applied">Applied</option>
-                    <option value="in-review">In Review</option>
-                    <option value="shortlisted">Shortlisted</option>
-                    <option value="selected">Selected</option>
-                    <option value="rejected">Rejected</option>
-                    <option value="withdrawn">Withdrawn</option>
-                </select>
+                    <p class="small-heading">APPLICATION TRACKER</p>
+                    <h2 id="listHeading">Your applications</h2>
+                    <p>Review status updates and manage your submissions.</p>
+                </div><a class="text-link" href="../jobs/internships.html">Explore internships <span
+                        aria-hidden="true">→</span></a>
             </div>
-
-            <div class="application-tools">
-                <input id="applicationSearch" type="search" aria-label="Search applications" placeholder="Search title or company">
-                <select id="typeFilter" aria-label="Filter by opportunity type"><option value="all">All types</option><option value="job">Jobs</option><option value="internship">Internships</option></select>
-                <select id="applicationSort" aria-label="Sort applications"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="alpha">Alphabetical</option></select>
-                <button id="clearApplicationFilters" type="button" class="secondary-action">Clear filters</button>
-                <button id="refreshApplications" type="button" class="secondary-action">Refresh</button>
+            <div class="application-toolbar">
+                <label class="application-search"><span aria-hidden="true">⌕</span><span class="sr-only">Search
+                        applications</span><input id="applicationSearch" type="search"
+                        placeholder="Search by role or company"></label>
+                <label class="sort-control" for="applicationSort"><span>Sort by</span><select id="applicationSort">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                    </select></label>
             </div>
-
-
+            <div class="application-tabs" role="group" aria-label="Filter applications by status">
+                <button class="application-tab is-active" type="button" aria-pressed="true"
+                    data-status="all">All <span data-tab-count="all">0</span></button>
+                <button class="application-tab" type="button" aria-pressed="false"
+                    data-status="pending">Pending <span data-tab-count="pending">0</span></button>
+                <button class="application-tab" type="button" aria-pressed="false"
+                    data-status="shortlisted">Shortlisted <span data-tab-count="shortlisted">0</span></button>
+                <button class="application-tab" type="button" aria-pressed="false"
+                    data-status="interview">Interview <span data-tab-count="interview">0</span></button>
+                <button class="application-tab" type="button" aria-pressed="false"
+                    data-status="selected">Selected <span data-tab-count="selected">0</span></button>
+                <button class="application-tab" type="button" aria-pressed="false"
+                    data-status="rejected">Rejected <span data-tab-count="rejected">0</span></button>
+                <button class="application-tab" type="button" aria-pressed="false"
+                    data-status="withdrawn">Withdrawn <span data-tab-count="withdrawn">0</span></button>
+            </div>
             <div class="applications-container" aria-live="polite"></div>
-            <button id="loadMoreApplications" type="button" class="secondary-action load-more" hidden>Load more</button>
         </section>
-
     </main>
-
+    <script src="../js/demo-data.js?v=2"></script>
     <script src="applications.js"></script>
-
 </body>
+
 </html>
